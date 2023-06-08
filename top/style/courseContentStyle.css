@@ -1,0 +1,341 @@
+.sidebar1 .sidebarHeader {
+    border-right: 0;
+  }
+  .sidebar1 {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+  }
+
+  .sidebarHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 0.8rem 0.8rem 1.6rem;
+    border: 1px solid #d1d7dc;
+    background-color: #fff;
+  }
+
+  .sidebarClose {
+    padding: 0.8rem;
+  }
+  
+  .sidebarContent {
+    z-index: 1;
+    flex: 1;
+    background-color: #fff;
+    border: 1px solid #f7f9fa;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .sidebarCourseContent {
+    border: 0;
+    border-bottom: 1px solid #d1d7dc;
+    margin: 0;
+  }
+
+  .sidebarCourseContent .section1:first-child {
+    border-top: 0;
+  }
+  .sidebarCourseContent .section1:last-child {
+    border-bottom: 0;
+  }
+
+  .accordion-panel-module--static-panel--36jVq
+  .panelModuleContentWrap,
+.panelModule
+  span[data-checked="checked"]
+  ~ .panelModuleContentWrap {
+  max-height: none;
+  overflow: visible;
+  visibility: visible;
+}
+
+.panelModule .PanelHeading5,
+.panelModule .panelAcTitle {
+  display: flex;
+  flex: 1;
+}
+.panelModule
+  .panelModuleOuter
+  .panelModuleExpandIcon {
+  margin-left: 1.6rem;
+  transition: transform 150ms linear;
+}
+.panelModule
+  span[data-checked="checked"]
+  ~ .panelModuleOuter
+  .panelModuleExpandIcon {
+  transform: rotate(-180deg);
+}
+
+.panelModule {
+    border-top: 1px solid #d1d7dc;
+  }
+  .panelModule:last-child {
+    border-bottom: 1px solid #d1d7dc;
+  }
+
+  .section1 .panelToggler {
+    background: #f7f9fa;
+    padding: 1.6rem;
+  }
+  .section1 .panelContents {
+    padding: 0;
+  }
+  .section1 h3 {
+    max-width: none;
+  }
+
+  .info-section--section--3hA9q .panelToggler {
+    padding: 1.6rem;
+  }
+
+  .course-alternatives--custom-title-accordion-panel--3tSCH
+  .panelToggler {
+  flex-direction: row-reverse;
+  justify-content: start;
+}
+.course-alternatives--custom-title-accordion-panel--3tSCH
+  .panelToggler
+  .panelAcTitle {
+  color: #5624d0;
+  font-family: var(--font-stack-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02rem;
+  font-size: 1.4rem;
+}
+.course-alternatives--custom-title-accordion-panel--3tSCH
+  .panelToggler
+  .panelAcTitle:hover {
+  color: #401b9c;
+}
+
+.course-alternatives--custom-title-accordion-panel-expanded--1H-gN
+  .panelToggler {
+  padding-bottom: 0;
+}
+
+.panelModuleToggler {
+    color: #1c1d1f !important;
+    display: block;
+    text-align: left;
+    white-space: normal;
+    width: 100%;
+  }
+  .panelModuleToggler[aria-disabled="true"] {
+    cursor: inherit;
+    opacity: 1;
+  }
+
+  .panelModuleOuter {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1.6rem 0;
+  }
+
+  .sectionHeadingS {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .sectionFlex {
+    flex: 1;
+    min-width: 1px;
+  }
+
+  .section--title-tooltip--1QxQG {
+    width: 100%;
+  }
+
+  .TooltipWithTruncate {
+    display: block !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
+
+  .sectionProgressBar {
+    margin-top: 0.4rem;
+  }
+
+  .panelModuleContentWrap {
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+
+  .info-section--section--3hA9q .panelContents {
+    padding: 0 1.6rem 1.6rem;
+  }
+
+  .course-alternatives--custom-title-accordion-panel--3tSCH
+  .panelContents {
+  padding: 0;
+}
+
+
+.panelContentsModule1 {
+    padding: 0.8rem 0 1.6rem;
+  }
+
+  
+.curriculumItemLinks {
+    position: relative;
+  }
+  .curriculumItemLinks > .item-link {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.6rem;
+    color: #1c1d1f;
+    padding: 0.8rem 1.6rem;
+  }
+  .curriculumItemLinks
+    > .item-link
+    .curriculumItemLinkProgress {
+    padding: 0;
+    min-width: 0;
+  }
+  .curriculumItemLinks
+    > .item-link
+    .curriculumItemLinkProgress
+    .fakeToggleInput {
+    margin: 0;
+  }
+  .curriculumItemLinks
+    > .item-link
+    .ItemLinkContainer {
+    flex: 1;
+    min-width: 1px;
+  }
+  .curriculumItemLinks
+    > .item-link
+    .ItemLinkBottomRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem;
+    padding-top: 0.8rem;
+  }
+  .curriculumItemLinks
+    > .item-link
+    .itemLinkMetadata {
+    color: #6a6f73;
+    display: flex;
+    gap: 0.4rem;
+  }
+  .curriculumItemLinks
+    > .item-link
+    .itemLinkMetadata
+    > button {
+    color: #6a6f73;
+    max-height: 16rem;
+  }
+  .curriculumItemLinks > .item-link:hover,
+  .curriculumItemLinks.curriculum-item-link--is-current--31BPo
+    > .item-link {
+    background: #d1d7dc;
+  }
+  .curriculumItemLinks
+    > .item-link:hover
+    .itemLinkMetadata,
+  .curriculumItemLinks.curriculum-item-link--is-current--31BPo
+    > .item-link
+    .itemLinkMetadata {
+    color: #1c1d1f;
+  }
+  .curriculumItemLinks
+    > .item-link:hover
+    .itemLinkMetadata
+    > button,
+  .curriculumItemLinks.curriculum-item-link--is-current--31BPo
+    > .item-link
+    .itemLinkMetadata
+    > button {
+    color: #1c1d1f;
+  }
+  .curriculumItemLinks
+    .ItemLinkContainerTitle {
+    display: flex;
+  }
+  .curriculumItemLinks
+    .ItemLinkContainerTitleContent {
+    flex: 1;
+  }
+
+  .ToggleInputContainer {
+    cursor: pointer;
+    display: flex;
+    padding: 0.8rem 0;
+    user-select: none;
+    -webkit-user-select: none;
+    min-width: 18rem;
+    max-width: 60rem;
+  }
+
+  .ToggleInputContainer:not(.ud-toggle-input-disabled):hover
+  .fakeToggleInput {
+  border-color: #000;
+}
+.ToggleInputContainer:not(.ud-toggle-input-disabled):hover
+  .RealToggleInput:checked
+  ~ .fakeToggleCheckbox {
+  border-color: #000;
+  background: #000;
+}
+
+.RealToggleInput:checked ~ .fakeToggleCheckbox {
+    background: #1c1d1f;
+    border-color: #1c1d1f;
+    color: #fff;
+  }
+  .RealToggleInput:checked ~ .ud-fake-toggle-radio-small {
+    background: #1c1d1f;
+    box-shadow: 0 0 0 0.2rem #fff inset;
+  }
+  .RealToggleInput:checked ~ .ud-fake-toggle-radio-large {
+    background: #1c1d1f;
+    box-shadow: 0 0 0 0.4rem #fff inset;
+  }
+
+  body.ud-keyboard-navigation-in-use
+  .RealToggleInput:focus
+  ~ .fakeToggleInput {
+  outline: 4px solid #b4690e;
+}
+
+body.ud-keyboard-navigation-in-use
+  .ud-toggle-input-block-container
+  .RealToggleInput:focus
+  ~ .fakeToggleInput {
+  outline: none;
+}
+body.ud-keyboard-navigation-in-use
+  .ud-toggle-input-block-container
+  .RealToggleInput:focus
+  ~ .ud-toggle-input-block-outline {
+  outline: 4px solid #b4690e;
+}
+
+.fakeToggleInput {
+    border: 0.2rem solid #1c1d1f;
+    margin-right: 0.8rem;
+    position: relative;
+    top: 0.2rem;
+  }
+
+  .ud-toggle-input-block-container .fakeToggleInput {
+    margin-right: 1.6rem;
+    top: 0;
+  }
+
+  .fakeToggleCheckbox {
+    color: transparent;
+  }

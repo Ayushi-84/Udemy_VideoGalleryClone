@@ -831,7 +831,7 @@
   padding: 0;
 }
 .email-settings-menu-item--email-settings-option-checkbox--1xgQy
-  .ud-fake-toggle-input {
+  .fakeToggleInput {
   margin-right: 1.6rem;
 }
 .email-settings-menu-item--email-settings-option-checkbox--1xgQy.ud-toggle-input-disabled {
@@ -3892,7 +3892,7 @@ body.ud-keyboard-navigation-in-use
 .mc-quiz-question--container--3GZ4h ul li.mc-quiz-question--answer--eCdL3 {
   margin-top: 1.6rem;
 }
-.mc-quiz-question--answer--eCdL3 .ud-toggle-input-container {
+.mc-quiz-question--answer--eCdL3 .ToggleInputContainer {
   max-width: 80rem;
 }
 .mc-quiz-question--correct--2O3t6 {
@@ -3919,33 +3919,7 @@ body.ud-keyboard-navigation-in-use
   margin-right: 0.4rem;
   vertical-align: -0.4rem;
 }
-.sidebar--content---4z0- {
-  z-index: 1;
-  flex: 1;
-  background-color: #fff;
-  border: 1px solid #f7f9fa;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-.sidebar--sidebar-header--3RQk_ {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.8rem 0.8rem 0.8rem 1.6rem;
-  border: 1px solid #d1d7dc;
-  background-color: #fff;
-}
-.sidebar--close-btn--2TpMF {
-  padding: 0.8rem;
-}
-.sidebar--sidebar--2XpCD .sidebar--sidebar-header--3RQk_ {
-  border-right: 0;
-}
-.sidebar--sidebar--2XpCD {
-  display: flex;
-  flex-flow: column;
-  height: 100%;
-}
+
 
 .question-navigation-item--item-content--1JDa9 {
   flex: 1;
@@ -5297,12 +5271,8 @@ input.learning-reminder-form--no-border--1FaOF {
 .mobile-app-sms-download-form--phone-input--3jB-B {
   border-right: none;
 }
-.info-section--section--3hA9q .ud-accordion-panel-toggler {
-  padding: 1.6rem;
-}
-.info-section--section--3hA9q .ud-accordion-panel-content {
-  padding: 0 1.6rem 1.6rem;
-}
+
+
 .info-section--section--3hA9q.info-section--default--3e6ml {
   background: #f7f9fa;
   border: 0;
@@ -5314,15 +5284,7 @@ input.learning-reminder-form--no-border--1FaOF {
 .assessment-launcher-section--assessment-launch--jFoeG {
   margin-bottom: 1.6rem;
 }
-.truncate-with-tooltip--ellipsis--2-jEx {
-  display: block !important;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: normal;
-}
+
 .messages--labs-alert--SajQk {
   margin-top: 3.2rem;
 }
@@ -5377,88 +5339,6 @@ input.learning-reminder-form--no-border--1FaOF {
 .messages--feedback-link--LkVFQ {
   margin-top: 2.4rem;
 }
-.curriculum-item-link--curriculum-item--KX9MD {
-  position: relative;
-}
-.curriculum-item-link--curriculum-item--KX9MD > .item-link {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.6rem;
-  color: #1c1d1f;
-  padding: 0.8rem 1.6rem;
-}
-.curriculum-item-link--curriculum-item--KX9MD
-  > .item-link
-  .curriculum-item-link--progress-toggle--1CMcg {
-  padding: 0;
-  min-width: 0;
-}
-.curriculum-item-link--curriculum-item--KX9MD
-  > .item-link
-  .curriculum-item-link--progress-toggle--1CMcg
-  .ud-fake-toggle-input {
-  margin: 0;
-}
-.curriculum-item-link--curriculum-item--KX9MD
-  > .item-link
-  .curriculum-item-link--item-container--1ptOz {
-  flex: 1;
-  min-width: 1px;
-}
-.curriculum-item-link--curriculum-item--KX9MD
-  > .item-link
-  .curriculum-item-link--bottom-row--1j052 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.4rem;
-  padding-top: 0.8rem;
-}
-.curriculum-item-link--curriculum-item--KX9MD
-  > .item-link
-  .curriculum-item-link--metadata--e17HG {
-  color: #6a6f73;
-  display: flex;
-  gap: 0.4rem;
-}
-.curriculum-item-link--curriculum-item--KX9MD
-  > .item-link
-  .curriculum-item-link--metadata--e17HG
-  > button {
-  color: #6a6f73;
-  max-height: 16rem;
-}
-.curriculum-item-link--curriculum-item--KX9MD > .item-link:hover,
-.curriculum-item-link--curriculum-item--KX9MD.curriculum-item-link--is-current--31BPo
-  > .item-link {
-  background: #d1d7dc;
-}
-.curriculum-item-link--curriculum-item--KX9MD
-  > .item-link:hover
-  .curriculum-item-link--metadata--e17HG,
-.curriculum-item-link--curriculum-item--KX9MD.curriculum-item-link--is-current--31BPo
-  > .item-link
-  .curriculum-item-link--metadata--e17HG {
-  color: #1c1d1f;
-}
-.curriculum-item-link--curriculum-item--KX9MD
-  > .item-link:hover
-  .curriculum-item-link--metadata--e17HG
-  > button,
-.curriculum-item-link--curriculum-item--KX9MD.curriculum-item-link--is-current--31BPo
-  > .item-link
-  .curriculum-item-link--metadata--e17HG
-  > button {
-  color: #1c1d1f;
-}
-.curriculum-item-link--curriculum-item--KX9MD
-  .curriculum-item-link--curriculum-item-title--2hYub {
-  display: flex;
-}
-.curriculum-item-link--curriculum-item--KX9MD
-  .curriculum-item-link--curriculum-item-title-content--1SLoR {
-  flex: 1;
-}
 .curriculum-item-link--resource-list--1xEMk {
   padding: 0.8rem 2.4rem;
 }
@@ -5481,33 +5361,9 @@ input.learning-reminder-form--no-border--1FaOF {
     display: none;
   }
 }
-.section--section--BukKG .ud-accordion-panel-toggler {
-  background: #f7f9fa;
-  padding: 1.6rem;
-}
-.section--section--BukKG .ud-accordion-panel-content {
-  padding: 0;
-}
-.section--section--BukKG h3 {
-  max-width: none;
-}
-.ct-sidebar-course-content .section--section--BukKG:first-child {
-  border-top: 0;
-}
-.ct-sidebar-course-content .section--section--BukKG:last-child {
-  border-bottom: 0;
-}
-.section--section-heading--2k6aW {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.8rem;
-}
-.section--title-tooltip--1QxQG {
-  width: 100%;
-}
-.section--progress--3R0vk {
-  margin-top: 0.4rem;
-}
+
+
+
 .section--recommended-assessment-icon--3ZxgA {
   color: #5624d0;
 }
@@ -5520,21 +5376,14 @@ input.learning-reminder-form--no-border--1FaOF {
 .section--popover-text--hpHVW {
   margin-top: 1.6rem;
 }
-.section--flex--1MW7w {
-  flex: 1;
-  min-width: 1px;
-}
+
 .course-content--sidebar-loader--Do9nZ {
   margin-top: 4.8rem;
 }
 .course-content--alert-banner--29qYw {
   margin-bottom: 1.6rem;
 }
-.ct-sidebar-course-content .course-content--alert-banner--29qYw {
-  border: 0;
-  border-bottom: 1px solid #d1d7dc;
-  margin: 0;
-}
+
 .empty-view--empty-view--3nKkF {
   display: flex;
   justify-content: center;
@@ -6267,7 +6116,7 @@ a.instructor-profile--title--1rlDt {
   margin-top: 1.6rem;
 }
 .new-question--container--3a4aA .ud-form-group,
-.new-question--container--3a4aA .ud-toggle-input-container {
+.new-question--container--3a4aA .ToggleInputContainer {
   max-width: none;
 }
 .new-question--back--XMGhh {

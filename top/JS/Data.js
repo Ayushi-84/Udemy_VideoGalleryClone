@@ -18,12 +18,25 @@ class="icon icon-medium"
   xlink:href="#icon-pause"
 ></use>
 </svg>`;
-const sound = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+const sound = `<svg
+aria-label="Mute"
+role="img"
+focusable="false"
+class="icon icon-medium"
+>
+<use
+  xlink:href="#icon-volume-on"
+></use>
 </svg>`;
-const mute = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" clip-rule="evenodd" />
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+const mute = `<svg
+aria-label="Mute"
+role="img"
+focusable="false"
+class="icon icon-medium"
+>
+<use
+  xlink:href="#icon-volume-off"
+></use>
 </svg>`;
 
 const expand=` <svg
@@ -56,12 +69,22 @@ const rewind = document.querySelector('#rewind');
 const forward = document.querySelector('#forward');
 const video = document.getElementById('video');
 const timeline = document.querySelector('.timeline');
-const soundButton = document.querySelector('.sound-button');
+const soundButton = document.querySelector('#soundButton');
 const fullscreenButton = document.querySelector('#fullscreenButton');
 const videoContainer = document.querySelector('.videoPlayer1');
+const popper = document.getElementById("popperContentD");
+const setting = document.getElementById("setting");
 var isFullScreen = false;
 
 playButton.addEventListener('click', function () {
+  if(popper.classList.contains("popper"))
+  {
+    popper.classList.remove("popper");
+  }
+  if(setting.classList.contains("popper"))
+  {
+    setting.classList.remove("popper");
+  }
   if (video.paused) {
     video.play();
     videoContainer.classList.add('playing');
@@ -75,12 +98,28 @@ playButton.addEventListener('click', function () {
   }
 })
 rewind.addEventListener('click', function (event) {
+  if(popper.classList.contains("popper"))
+  {
+    popper.classList.remove("popper");
+  }
+  if(setting.classList.contains("popper"))
+  {
+    setting.classList.remove("popper");
+  }
   event.preventDefault();
               
   vid_currentTime = video.currentTime;
   video.currentTime = vid_currentTime - 5;
 })
 forward.addEventListener('click', function (event) {
+  if(popper.classList.contains("popper"))
+  {
+    popper.classList.remove("popper");
+  }
+  if(setting.classList.contains("popper"))
+  {
+    setting.classList.remove("popper");
+  }
   event.preventDefault();
               
   vid_currentTime = video.currentTime;
@@ -127,6 +166,14 @@ soundButton.addEventListener('click', function () {
 });
 
  function fullscreen() {
+  if(setting.classList.contains("popper"))
+  {
+    setting.classList.remove("popper");
+  }
+   if(popper.classList.contains("popper"))
+  {
+    popper.classList.remove("popper");
+  }
   if (!isFullScreen) {
     if (video.requestFullscreen) {
    document.getElementById('videoViewer').requestFullscreen();
@@ -163,4 +210,105 @@ soundButton.addEventListener('click', function () {
     isFullScreen=false;
   }
   }
+}
+
+function playbackRate(){
+  if(setting.classList.contains("popper"))
+  {
+    setting.classList.remove("popper");
+  }
+  if(popper.classList.contains("popper"))
+  {
+    popper.classList.remove("popper");
+  }
+  else
+ { popper.classList.add("popper");
+}
+}
+function settings(){
+  if(popper.classList.contains("popper"))
+  {
+    popper.classList.remove("popper");
+  }
+  if(setting.classList.contains("popper"))
+  {
+    setting.classList.remove("popper");
+  }
+  else
+ { setting.classList.add("popper");
+}
+}
+
+function playBackRateChanger(item){
+  video.playbackRate = item;
+  var i=0.5;
+  popper.classList.remove("popper");
+  document.getElementById('playBackRateContent').innerHTML=item+'x';
+  const data=document.getElementById(`${item}`);
+  const checked=data.getAttribute("aria-checked");
+   if (checked === "true") {
+    data.setAttribute("aria-checked", "false");
+  } else {
+    data.setAttribute("aria-checked", "true");
+  }
+  while(i<=2){
+    if(i!=item)
+    {
+      const data=document.getElementById(`${i}`);
+      const checked=data.getAttribute("aria-checked");
+        data.setAttribute("aria-checked", "false");  
+    }
+    i=i+0.25;
+  }
+}
+
+function autoplay(){
+ 
+  video.autoplay;
+  if(setting.classList.contains("popper"))
+  {
+    setting.classList.remove("popper");
+  }
+}
+
+function expandedView(){
+  var item=document.getElementById('columnContainer')
+  if(item.classList.contains("no-sidebar"))
+  {
+    item.classList.remove("no-sidebar");
+    document.getElementById('sidebarColumn').style.width="25%";
+  }
+  else
+  {
+    item.classList.add('no-sidebar');
+    document.getElementById('sidebarColumn').style.width="0%";
+  }
+  
+}
+
+function playVideo(item){
+if(item==1)
+{
+  video.src='./videos/video1.mp4'
+}
+if(item==2)
+{
+  video.src='./videos/video2.mp4'
+}
+if(item==3)
+{
+  video.src='./videos/video3.mp4'
+}
+if(item==4)
+{
+  video.src='./videos/video4.mp4'
+}
+if(item==5)
+{
+  video.src='./videos/video5.mp4'
+}
+if(item==6)
+{
+  video.src='./videos/video6.mp4'
+}
 }

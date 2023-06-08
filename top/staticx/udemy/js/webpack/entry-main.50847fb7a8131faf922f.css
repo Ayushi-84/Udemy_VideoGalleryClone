@@ -360,28 +360,13 @@ body.ud-keyboard-navigation-in-use .ud-compact-form-control-container-focus {
   width: 4rem;
 }
 
-.ud-toggle-input-container {
-  cursor: pointer;
-  display: flex;
-  padding: 0.8rem 0;
-  user-select: none;
-  -webkit-user-select: none;
-  min-width: 18rem;
-  max-width: 60rem;
-}
+
 .ud-toggle-input-disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
-.ud-fake-toggle-input {
-  border: 0.2rem solid #1c1d1f;
-  margin-right: 0.8rem;
-  position: relative;
-  top: 0.2rem;
-}
-.ud-fake-toggle-checkbox {
-  color: transparent;
-}
+
+
 .ud-fake-toggle-radio-small {
   width: 1.6rem;
   height: 1.6rem;
@@ -390,29 +375,8 @@ body.ud-keyboard-navigation-in-use .ud-compact-form-control-container-focus {
   width: 2rem;
   height: 2rem;
 }
-.ud-real-toggle-input:checked ~ .ud-fake-toggle-checkbox {
-  background: #1c1d1f;
-  border-color: #1c1d1f;
-  color: #fff;
-}
-.ud-real-toggle-input:checked ~ .ud-fake-toggle-radio-small {
-  background: #1c1d1f;
-  box-shadow: 0 0 0 0.2rem #fff inset;
-}
-.ud-real-toggle-input:checked ~ .ud-fake-toggle-radio-large {
-  background: #1c1d1f;
-  box-shadow: 0 0 0 0.4rem #fff inset;
-}
-.ud-toggle-input-container:not(.ud-toggle-input-disabled):hover
-  .ud-fake-toggle-input {
-  border-color: #000;
-}
-.ud-toggle-input-container:not(.ud-toggle-input-disabled):hover
-  .ud-real-toggle-input:checked
-  ~ .ud-fake-toggle-checkbox {
-  border-color: #000;
-  background: #000;
-}
+
+
 .ud-fake-toggle-indeterminate-checkbox {
   color: #fff;
   background: #1c1d1f;
@@ -423,19 +387,12 @@ body.ud-keyboard-navigation-in-use .ud-compact-form-control-container-focus {
   display: inline-block;
   flex-shrink: 0;
 }
-body.ud-keyboard-navigation-in-use
-  .ud-real-toggle-input:focus
-  ~ .ud-fake-toggle-input {
-  outline: 4px solid #b4690e;
-}
-.ud-toggle-input-block-container.ud-toggle-input-container {
+
+.ud-toggle-input-block-container.ToggleInputContainer {
   padding: 1.6rem;
   position: relative;
 }
-.ud-toggle-input-block-container .ud-fake-toggle-input {
-  margin-right: 1.6rem;
-  top: 0;
-}
+
 .ud-toggle-input-block-outline {
   border: 1px solid #1c1d1f;
   position: absolute;
@@ -447,18 +404,7 @@ body.ud-keyboard-navigation-in-use
 .ud-toggle-input-block-details {
   margin-top: 0.8rem;
 }
-body.ud-keyboard-navigation-in-use
-  .ud-toggle-input-block-container
-  .ud-real-toggle-input:focus
-  ~ .ud-fake-toggle-input {
-  outline: none;
-}
-body.ud-keyboard-navigation-in-use
-  .ud-toggle-input-block-container
-  .ud-real-toggle-input:focus
-  ~ .ud-toggle-input-block-outline {
-  outline: 4px solid #b4690e;
-}
+
 .ud-toggle-input-block-container:not(.ud-toggle-input-disabled):hover {
   background: rgba(0, 0, 0, 0.04);
 }
