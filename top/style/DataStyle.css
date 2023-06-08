@@ -90,6 +90,10 @@
     }
   }
 
+  .popoverModuleLeft {
+    margin-right: 0.4rem;
+  }
+
   
 .row1 {
     display: flex;
@@ -116,19 +120,19 @@
     display: flex;
     padding-bottom: 0;
   }
-  .row1.app--dashboard--dXVM6 .rowContent {
+  .row1.dashboard .rowContent {
     display: flex;
     justify-content: center;
     padding: 0 1.6rem;
   }
   @media (max-width: 61.25em) {
-    .row1.app--dashboard--dXVM6 .rowContent {
+    .row1.dashboard .rowContent {
       padding: 0;
     }
   }
 
   .curriculum,
-.app--dashboard-content--r2Ce9 {
+.dashboardContent {
   width: 100%;
 }
 .curriculum {

@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('videoTime').innerHTML=secondsToHms(video.duration);
+}, true);
+
 const play = ` <svg
 aria-label="Play"
 role="img"
@@ -58,6 +62,28 @@ class="icon icon-medium"
 >
 <use
   xlink:href="#icon-collapse-diagonal"
+></use>
+</svg>`
+
+const expandedHor=` <svg
+aria-label="Expanded view"
+role="img"
+focusable="false"
+class="icon icon-medium"
+>
+<use
+  xlink:href="#icon-expand-horizontal"
+></use>
+</svg>`
+
+const collapseHor=` <svg
+aria-label="Expanded view"
+role="img"
+focusable="false"
+class="icon icon-medium"
+>
+<use
+  xlink:href="#icon-collapse-horizontal"
 ></use>
 </svg>`
 
@@ -129,11 +155,6 @@ forward.addEventListener('click', function (event) {
 video.onended = function () {
   playButton.innerHTML = play;
 }
-document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('currentTime').innerHTML=secondsToHms(video.currentTime);
-  document.getElementById('videoTime').innerHTML=secondsToHms(video.duration);
-  console.log(video.duration)
-}, false);
 
 video.ontimeupdate = function () {
   const percentagePosition = (100*video.currentTime) / video.duration;
@@ -272,16 +293,22 @@ function autoplay(){
 }
 
 function expandedView(){
+  var exp=document.getElementById('ExpandedView')
   var item=document.getElementById('columnContainer')
+  var expo=document.getElementById('expandedHorizontal')
   if(item.classList.contains("no-sidebar"))
   {
     item.classList.remove("no-sidebar");
     document.getElementById('sidebarColumn').style.width="25%";
+    exp.innerHTML='Expanded View';
+    expo.innerHTML=expandedHor;
   }
   else
   {
     item.classList.add('no-sidebar');
     document.getElementById('sidebarColumn').style.width="0%";
+    exp.innerHTML='Collapse View';
+    expo.innerHTML=collapseHor;
   }
   
 }

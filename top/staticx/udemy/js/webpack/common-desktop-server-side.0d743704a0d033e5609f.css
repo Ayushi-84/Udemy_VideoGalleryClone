@@ -115,65 +115,11 @@ body {
   + .activity-notifications-module--footer--3bQw7 {
   margin-top: 0;
 }
-.tabs-module--tabs-container--f-q9T {
-  --tabs-scroll-left-bg: linear-gradient(
-    to right,
-    #fff 75%,
-    rgba(255, 255, 255, 0)
-  );
-  --tabs-scroll-right-bg: linear-gradient(
-    to left,
-    #fff 75%,
-    rgba(255, 255, 255, 0)
-  );
-  --tabs-scroll-right-bg-overflow: linear-gradient(
-    to left,
-    #fff,
-    rgba(255, 255, 255, 0)
-  );
-  --tabs-pagination-color: #5624d0;
-  --tabs-text-color-default: #1c1d1f;
-  --tabs-nav-color-default: #6a6f73;
-  --tabs-nav-color-active: #1c1d1f;
-  --tabs-nav-color-hover: #1c1d1f;
-  --tabs-container-border-bottom-active: 0.2rem solid #1c1d1f;
-  --tabs-box-shadow-color: #d1d7dc;
-}
-.tabs-module--tabs-container--f-q9T.tabs-module--inverted--2KxLQ {
-  --tabs-scroll-left-bg: linear-gradient(
-    to right,
-    #1c1d1f 75%,
-    rgba(28, 29, 31, 0)
-  );
-  --tabs-scroll-right-bg: linear-gradient(
-    to left,
-    #1c1d1f 75%,
-    rgba(28, 29, 31, 0)
-  );
-  --tabs-scroll-right-bg-overflow: linear-gradient(
-    to left,
-    #1c1d1f,
-    rgba(28, 29, 31, 0)
-  );
-  --tabs-pagination-color: #fff;
-  --tabs-text-color-default: #fff;
-  --tabs-nav-color-default: #d1d7dc;
-  --tabs-nav-color-active: #fff;
-  --tabs-nav-color-hover: #fff;
-  --tabs-container-border-bottom-active: 0.2rem solid #fff;
-  --tabs-box-shadow-color: #6a6f73;
-}
-.tabs-module--tabs-nav-buttons--1xMXh {
-  box-shadow: inset 0 -1px 0 0 var(--tabs-box-shadow-color);
-  position: relative;
-}
+
 .tabs-module--nav-button-container--u4wUp {
   flex: 1 1 auto;
 }
-.tabs-module--full-width--Ce1ti .tabs-module--tabs-nav-buttons--1xMXh {
-  display: flex;
-  justify-content: space-evenly;
-}
+
 .tabs-module--tab-content--30h0i {
   max-width: 0;
   max-height: 0;
@@ -191,17 +137,7 @@ body {
   overflow: visible;
   visibility: visible;
 }
-.tabs-module--tabs-container--f-q9T .tabs-module--pagination-buttons--3X3GB {
-  border: none;
-  box-shadow: none;
-  background: var(--tabs-scroll-left-bg);
-  color: var(--tabs-pagination-color);
-}
-.tabs-module--tabs-container--f-q9T
-  .tabs-module--pagination-buttons--3X3GB
-  + .tabs-module--pagination-buttons--3X3GB {
-  background: var(--tabs-scroll-right-bg);
-}
+
 .tabs-module--gradient--1kifp {
   position: absolute;
   height: 90%;
@@ -234,20 +170,7 @@ body {
 .carousel-module--container--27wzs {
   position: relative;
 }
-.carousel-module--scroll-port--28Dow {
-  scrollbar-width: none;
-  display: flex;
-  overflow: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-snap-stop: always;
-  touch-action: manipulation;
-  -webkit-overflow-scrolling: touch;
-}
-.carousel-module--scroll-port--28Dow::-webkit-scrollbar {
-  display: none;
-  width: 0;
-}
+
 .carousel-module--scroll-lock--1Ys-j {
   overflow-x: hidden;
 }
@@ -258,12 +181,7 @@ body {
 .carousel-module--scroll-item--2CpA_:empty {
   display: none;
 }
-.carousel-module--grid--3Qw6j {
-  display: grid;
-  grid-auto-columns: max-content;
-  grid-auto-flow: column;
-  grid-gap: 1.6rem;
-}
+
 .carousel-module--small-grid--P_n-m {
   grid-gap: 0.8rem;
 }

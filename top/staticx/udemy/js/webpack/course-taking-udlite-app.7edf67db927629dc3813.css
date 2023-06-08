@@ -2766,7 +2766,7 @@ body.ud-keyboard-navigation-in-use
 .result-container--output--3-OVZ .result-container--log-text--2Wfx0:last-child {
   margin-bottom: 1.6rem;
 }
-.result-container--output--3-OVZ .ud-tabs-nav-buttons {
+.result-container--output--3-OVZ .tabsNav {
   padding-left: 1.6rem;
   --tabs-box-shadow-color: #3e4143;
 }
@@ -3050,7 +3050,7 @@ body.ud-keyboard-navigation-in-use
   position: relative;
   margin: 0 2.4rem;
 }
-.editor-header--tabs-container--2LvOM .ud-tabs-nav-buttons {
+.editor-header--tabs-container--2LvOM .tabsNav {
   box-shadow: unset;
 }
 .editor-header--tabs-container-inner--2vQuK {
@@ -6394,9 +6394,7 @@ a.instructor-profile--title--1rlDt {
   margin: 0 auto;
   padding: 6.4rem 2.4rem 0;
 }
-.dashboard--tabs-container--35kox {
-  margin-bottom: 9.6rem;
-}
+
 .dashboard--sizing-wrapper--1vQud {
   margin: 0 auto;
   max-width: 84.8rem;
@@ -6405,17 +6403,7 @@ a.instructor-profile--title--1rlDt {
 .dashboard--sizing-wrapper--1vQud .ct-dashboard-search-bar.ud-form-group {
   max-width: none;
 }
-.dashboard--tabs-container--35kox .ud-tabs-nav-buttons {
-  padding: 0 1.6rem;
-}
-@media (max-width: 37.5em) {
-  .dashboard--tabs-container--35kox {
-    margin-bottom: 4.8rem;
-  }
-  .dashboard--sizing-wrapper--1vQud {
-    padding: 0.8rem 2.4rem 0;
-  }
-}
+
 .save-to-list-popover--save-to-list-popover-content--3TgFL > div {
   margin-bottom: 0.8rem;
 }

@@ -65,8 +65,9 @@
   <link href="./top/style/buttonStyle.css" rel="stylesheet" type="text/css"/>
   <link href="./top/style/FontStyle.css" rel="stylesheet" type="text/css"/>
   <link href="./top/style/courseContentStyle.css" rel="stylesheet" type="text/css"/>
+  <link href="./top/style/Overview.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/7f85a56ba4.css" />
-    <!-- <link
+     <link
     type="text/css"
     rel="stylesheet"
     href="./top/staticx/udemy/js/webpack/course-taking-udlite-app.7edf67db927629dc3813.css"
@@ -90,7 +91,7 @@ href="./top/staticx/udemy/js/webpack/entry-main.50847fb7a8131faf922f.css"
 type="text/css"
 rel="stylesheet"
 href="./top/staticx/udemy/js/webpack/common-app-css.04585221c27fc3c69dcd.css"
-/> -->
+/>
   </head>
   <body>
     <div class="mainContainer">
@@ -728,7 +729,7 @@ href="./top/staticx/udemy/js/webpack/common-app-css.04585221c27fc3c69dcd.css"
                                                         type="button"
                                                         data-purpose="theatre-mode-toggle-button"
                                                         class="btn btn-small btn-ghost heading-sm controlBarDropdown controlBarDropdownDark controlBarDropdownSmall"
-                                                        id="popper-trigger--450"
+                                                        id="expandedHorizontal"
                                                         tabindex="0"
                                                         onclick="expandedView()"
                                                       >
@@ -759,6 +760,7 @@ href="./top/staticx/udemy/js/webpack/common-app-css.04585221c27fc3c69dcd.css"
                                                       >
                                                         <div
                                                           class="text-sm tooltip"
+                                                          id="ExpandedView"
                                                         >
                                                          Expanded View
                                                         </div>
@@ -856,7 +858,7 @@ href="./top/staticx/udemy/js/webpack/common-app-css.04585221c27fc3c69dcd.css"
                                             class="popperModuleAnimation"
                                           >
                                             <div
-                                              class="popoverHead popover-module--popover-left--1WptH"
+                                              class="popoverHead popoverModuleLeft"
                                             >
                                               <div
                                                 class="popoverInner"
@@ -894,6 +896,7 @@ href="./top/staticx/udemy/js/webpack/common-app-css.04585221c27fc3c69dcd.css"
                         type="button"
                         class="btn btn-large btn-link heading-md link-neutral sidebarClose"
                         data-purpose="sidebar-button-close"
+                        onclick="expandedView()"
                       >
                         <svg
                           aria-label="Close Course content sidebar"
@@ -906,7 +909,7 @@ href="./top/staticx/udemy/js/webpack/common-app-css.04585221c27fc3c69dcd.css"
                       </button>
                     </div>
                     <div
-                      id="ct-sidebar-scroll-container"
+                      id="sidebarContent"
                       class="sidebarContent"
                       data-purpose="sidebarContent"
                     >
@@ -988,6 +991,87 @@ href="./top/staticx/udemy/js/webpack/common-app-css.04585221c27fc3c69dcd.css"
                               >
                                 <ul class="unstyledList">
                                   <li
+                                  aria-current="false"
+                                  class="curriculumItemLinks"
+                                >
+                                  <div
+                                    data-purpose="curriculum-item-0-1"
+                                    class="item-link itemLink customFocusVisible"
+                                    role=""
+                                  >
+                                    <div>
+                                      <label
+                                        class="curriculumItemLinkProgress ToggleInputContainer text-sm"
+                                        for="checkbox--463"
+                                        ><input
+                                          data-purpose="progress-toggle-button"
+                                          class="srOnly RealToggleInput"
+                                          id="checkbox--463"
+                                          type="checkbox"
+                                          checked=""
+                                        /><svg
+                                          aria-hidden="true"
+                                          focusable="false"
+                                          class="icon icon-xsmall fakeToggleInput fakeToggleCheckbox"
+                                        >
+                                          <use xlink:href="#icon-tick"></use>
+                                        </svg>
+                                        <span class="srOnly"
+                                          >Lecture completed. Progress cannot
+                                          be changed for this item.</span
+                                        ></label
+                                      >
+                                    </div>
+                                    <span class="srOnly">Play</span>
+                                    <div
+                                      class="ItemLinkContainer"
+                                    >
+                                      <div
+                                        class="text-sm focusVisibleTarget"
+                                      >
+                                        <div
+                                          class="ItemLinkContainerTitle"
+                                        >
+                                          <span
+                                            class="ItemLinkContainerTitleContent"
+                                            ><span
+                                              class="TooltipWithTruncate"
+                                              style="-webkit-line-clamp: 2"
+                                              ><span data-purpose="item-title"
+                                                >Video 1</span
+                                              ></span
+                                            ></span
+                                          >
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="ItemLinkBottomRow"
+                                      >
+                                        <div
+                                          class="text-xs itemLinkMetadata"
+                                        >
+                                          <button
+                                            type="button"
+                                            aria-label="Play Video 1"
+                                            class="btn btn-large btn-link heading-md"
+                                            onclick="playVideo(1)"
+                                          >
+                                            <svg
+                                              aria-hidden="true"
+                                              focusable="false"
+                                              class="icon icon-xsmall"
+                                            >
+                                              <use
+                                                xlink:href="#icon-video"
+                                              ></use>
+                                            </svg></button
+                                          ><span>28 sec</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                  <li
                                     aria-current="false"
                                     class="curriculumItemLinks"
                                   >
@@ -1035,89 +1119,6 @@ href="./top/staticx/udemy/js/webpack/common-app-css.04585221c27fc3c69dcd.css"
                                                 class="TooltipWithTruncate"
                                                 style="-webkit-line-clamp: 2"
                                                 ><span data-purpose="item-title"
-                                                  >Video 1</span
-                                                ></span
-                                              ></span
-                                            >
-                                          </div>
-                                        </div>
-                                        <div
-                                          class="ItemLinkBottomRow"
-                                        >
-                                          <div
-                                            class="text-xs itemLinkMetadata"
-                                          >
-                                            <button
-                                              type="button"
-                                              aria-label="Play Video 1"
-                                              class="btn btn-large btn-link heading-md"
-                                              onclick="playVideo(1)"
-                                            >
-                                              <svg
-                                                aria-hidden="true"
-                                                focusable="false"
-                                                class="icon icon-xsmall"
-                                              >
-                                                <use
-                                                  xlink:href="#icon-video"
-                                                ></use>
-                                              </svg></button
-                                            ><span>28 Sec</span>
-                                          </div>
-                                          <div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </li>
-                                  <li
-                                    aria-current="true"
-                                    class="curriculumItemLinks curriculum-item-link--is-current--31BPo"
-                                  >
-                                    <div
-                                      data-purpose="curriculum-item-0-1"
-                                      class="item-link itemLink customFocusVisible"
-                                      role=""
-                                    >
-                                      <div>
-                                        <label
-                                          class="curriculumItemLinkProgress ToggleInputContainer text-sm"
-                                          for="checkbox--463"
-                                          ><input
-                                            data-purpose="progress-toggle-button"
-                                            class="srOnly RealToggleInput"
-                                            id="checkbox--463"
-                                            type="checkbox"
-                                            checked=""
-                                          /><svg
-                                            aria-hidden="true"
-                                            focusable="false"
-                                            class="icon icon-xsmall fakeToggleInput fakeToggleCheckbox"
-                                          >
-                                            <use xlink:href="#icon-tick"></use>
-                                          </svg>
-                                          <span class="srOnly"
-                                            >Lecture completed. Progress cannot
-                                            be changed for this item.</span
-                                          ></label
-                                        >
-                                      </div>
-                                      <span class="srOnly">Play</span>
-                                      <div
-                                        class="ItemLinkContainer"
-                                      >
-                                        <div
-                                          class="text-sm focusVisibleTarget"
-                                        >
-                                          <div
-                                            class="ItemLinkContainerTitle"
-                                          >
-                                            <span
-                                              class="ItemLinkContainerTitleContent"
-                                              ><span
-                                                class="TooltipWithTruncate"
-                                                style="-webkit-line-clamp: 2"
-                                                ><span data-purpose="item-title"
                                                   >Video 2</span
                                                 ></span
                                               ></span
@@ -1132,7 +1133,7 @@ href="./top/staticx/udemy/js/webpack/common-app-css.04585221c27fc3c69dcd.css"
                                           >
                                             <button
                                               type="button"
-                                              aria-label="Play Video2"
+                                              aria-label="Play Video 2"
                                               class="btn btn-large btn-link heading-md"
                                               onclick="playVideo(2)"
                                             >
@@ -1145,7 +1146,9 @@ href="./top/staticx/udemy/js/webpack/common-app-css.04585221c27fc3c69dcd.css"
                                                   xlink:href="#icon-video"
                                                 ></use>
                                               </svg></button
-                                            ><span>09 sec</span>
+                                            ><span>09 Sec</span>
+                                          </div>
+                                          <div>
                                           </div>
                                         </div>
                                       </div>
@@ -1849,22 +1852,22 @@ href="./top/staticx/udemy/js/webpack/common-app-css.04585221c27fc3c69dcd.css"
                     </div>
                   </section>
                 </div>
-                <div class="row1 app--dashboard--dXVM6">
+                <div class="row1 dashboard">
                   <div class="rowContent">
-                    <div class="app--dashboard-content--r2Ce9">
+                    <div class="dashboardContent">
                       <section
-                        class="dashboard--tabs-container--35kox"
+                        class="dashboardTabsContainer"
                         aria-label="Additional course options"
                       >
-                        <div class="tabs-module--tabs-container--f-q9T">
+                        <div class="TabsModuleContainer">
                           <div
-                            class="ud-tabs-nav-buttons tabs-module--tabs-nav-buttons--1xMXh"
+                            class="tabsNav tabsNavModuleButtons"
                             role="tablist"
                             data-purpose="tab-nav-buttons"
                           >
-                            <div class="carousel-module--container--27wzs">
+                            <div class="carouselModuleContainer">
                               <div
-                                class="carousel-module--scroll-port--28Dow carousel-module--grid--3Qw6j carousel-module--scroll-lock--1Ys-j"
+                                class="carouselModuleScrollPort carouselModuleGrid carouselModuleScrollLock"
                                 data-purpose="scroll-port"
                                 id="scroll-port--2"
                                 aria-live="off"
