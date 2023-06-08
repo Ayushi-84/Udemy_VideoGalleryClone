@@ -429,7 +429,7 @@
   width: 100%;
   padding-bottom: 0.6rem;
   background: transparent;
-  background: linear-gradient(
+  /* background: linear-gradient(
     to top,
     rgba(20, 23, 28, 0.9) 0%,
     rgba(20, 23, 28, 0.738) 19%,
@@ -444,7 +444,7 @@
     rgba(20, 23, 28, 0.008) 95.2%,
     rgba(20, 23, 28, 0.002) 98.2%,
     rgba(20, 23, 28, 0) 100%
-  );
+  ); */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#1c1d1f,endColorstr=#1c1d1f,GradientType=0);
 }
 
