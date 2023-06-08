@@ -8,7 +8,7 @@
   }
 
   .dashboardTabsContainer .tabsNav {
-    padding: 0;
+    padding: 0 1.6rem;
   }
   @media (max-width: 37.5em) {
     .dashboardTabsContainer {
@@ -75,6 +75,7 @@
   .TabsModuleContainer .tabs-module--pagination-buttons--3X3GB {
     border: none;
     box-shadow: none;
+   
     background: var(--tabs-scroll-left-bg);
     color: var(--tabs-pagination-color);
   }
@@ -82,7 +83,7 @@
     .tabs-module--pagination-buttons--3X3GB
     + .tabs-module--pagination-buttons--3X3GB {
     background: var(--tabs-scroll-right-bg);
-    background-color: rgb(210, 207, 207);
+    background-color: grey;
   }
 
   .tabs-module--full-width--Ce1ti .tabsNavModuleButtons {
@@ -98,7 +99,6 @@
 
   .carouselModuleContainer {
     position: relative;
-    background-color: rgb(215, 210, 210);
   }
 
   .carouselModuleGrid {
@@ -126,3 +126,12 @@
   .carouselModuleScrollLock {
     overflow-x: hidden;
   }
+
+  .carouselModuleScrollItems {
+    min-width: 0.1rem;
+    scroll-snap-align: start;
+  }
+  .carouselModuleScrollItems:empty {
+    display: none;
+  }
+  

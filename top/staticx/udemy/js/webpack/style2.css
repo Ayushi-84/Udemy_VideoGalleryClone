@@ -174,13 +174,6 @@ body {
 .carousel-module--scroll-lock--1Ys-j {
   overflow-x: hidden;
 }
-.carousel-module--scroll-item--2CpA_ {
-  min-width: 0.1rem;
-  scroll-snap-align: start;
-}
-.carousel-module--scroll-item--2CpA_:empty {
-  display: none;
-}
 
 .carousel-module--small-grid--P_n-m {
   grid-gap: 0.8rem;

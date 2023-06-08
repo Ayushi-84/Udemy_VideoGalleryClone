@@ -1085,15 +1085,6 @@ th:not([aria-sort])[data-initial-sort="ascending"]
   border-bottom: var(--tabs-container-border-bottom-active);
 }
 
-
-.carousel-module--scroll-item--2CpA_ {
-  min-width: 0.1rem;
-  scroll-snap-align: start;
-}
-.carousel-module--scroll-item--2CpA_:empty {
-  display: none;
-}
-
 .carousel-module--small-grid--P_n-m {
   grid-gap: 0.8rem;
 }
