@@ -419,6 +419,10 @@
   flex-grow: 1;
 }
 
+.controlBarSpacer {
+  flex: 1;
+}
+
 .controlBarContainer {
   position: relative;
   z-index: 3;
@@ -1044,20 +1048,14 @@ body.ud-keyboard-navigation-in-use
   position: absolute;
   z-index: 1000;
 }
-.popperContent.ud-popper-open,
-.popper-module--popper-checkbox--1ypgk[data-checked="checked"]
-  ~ .popperContent {
+
+.controlBarDropdownDark:hover~.popperContent{
   display: block;
 }
 
-body .videoTooltip {
-  z-index: 1030;
-}
-
 .popperModuleAnimation {
-  opacity: 0;
-  animation: popper-module--pop-in--1Pg2a 100ms cubic-bezier(0.2, 0, 0.38, 0.9)
-    forwards;
+  opacity: 1;
+  animation: 100ms cubic-bezier(0.2, 0, 0.38, 0.9) forwards;
 }
 
 .text-input {
@@ -1289,7 +1287,7 @@ body.ud-keyboard-navigation-in-use
 }
 
 .unstyledList {
-  list-style: none;
+  list-style:none;
   margin: 0;
   padding: 0;
   max-width: none;
@@ -1535,4 +1533,11 @@ body.ud-keyboard-navigation-in-use
 .nextPrevious1 {
   border-right: 0;
   right: 0;
+}
+
+video::-webkit-media-controls {
+  display:none !important;
+}
+video::-webkit-media-controls-enclosure {
+  display:none !important;
 }

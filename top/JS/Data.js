@@ -26,35 +26,94 @@ const mute = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
 </svg>`;
 
+const expand=` <svg
+aria-label="Expanded view"
+role="img"
+focusable="false"
+class="icon icon-medium"
+>
+<use
+  xlink:href="#icon-expand-diagonal"
+></use>
+</svg>`;
+
+const collapse=` <svg
+aria-label="Collapse view"
+role="img"
+focusable="false"
+class="icon icon-medium"
+>
+<use
+  xlink:href="#icon-collapse-diagonal"
+></use>
+</svg>`
+
 const playButton = document.querySelector('#playButton');
-console.log(playButton)
+const playpause = document.getElementById('playPause');
+const fullScreenContent = document.getElementById('fullScreenContent');
+console.log(fullScreenContent)
+const rewind = document.querySelector('#rewind');
+const forward = document.querySelector('#forward');
 const video = document.getElementById('video');
 const timeline = document.querySelector('.timeline');
 const soundButton = document.querySelector('.sound-button');
-const fullscreenButton = document.querySelector('.fullscreen-button');
+const fullscreenButton = document.querySelector('#fullscreenButton');
 const videoContainer = document.querySelector('.videoPlayer1');
-let isFullScreen = false;
+var isFullScreen = false;
 
 playButton.addEventListener('click', function () {
   if (video.paused) {
     video.play();
     videoContainer.classList.add('playing');
     playButton.innerHTML = pause;
+    playpause.innerHTML="Pause"
   } else {
     video.pause();
     videoContainer.classList.remove('playing');
     playButton.innerHTML = play;
+    playpause.innerHTML="Play"
   }
+})
+rewind.addEventListener('click', function (event) {
+  event.preventDefault();
+              
+  vid_currentTime = video.currentTime;
+  video.currentTime = vid_currentTime - 5;
+})
+forward.addEventListener('click', function (event) {
+  event.preventDefault();
+              
+  vid_currentTime = video.currentTime;
+              video.currentTime = vid_currentTime + 5;
 })
 
 video.onended = function () {
   playButton.innerHTML = play;
 }
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('currentTime').innerHTML=secondsToHms(video.currentTime);
+  document.getElementById('videoTime').innerHTML=secondsToHms(video.duration);
+  console.log(video.duration)
+}, false);
 
 video.ontimeupdate = function () {
   const percentagePosition = (100*video.currentTime) / video.duration;
   timeline.style.backgroundSize = `${percentagePosition}% 100%`;
   timeline.value = percentagePosition;
+  document.getElementById('currentTime').innerHTML=secondsToHms(video.currentTime);
+}
+
+function secondsToHms(d) {
+  d = Number(d);
+  var h = Math.floor(d / 3600);
+  var m = Math.floor((d % 3600) / 60);
+  var s = Math.floor((d % 3600) % 60);
+
+  var hDisplay = h + ":";
+  var mDisplay = m + ":";
+  var sDisplay = s;
+
+  return hDisplay + mDisplay + sDisplay;
 }
 
 timeline.addEventListener('change', function () {
@@ -67,22 +126,41 @@ soundButton.addEventListener('click', function () {
   soundButton.innerHTML = video.muted ? mute : sound;
 });
 
-fullscreenButton.addEventListener('click', function () {
+ function fullscreen() {
   if (!isFullScreen) {
     if (video.requestFullscreen) {
-    video.requestFullscreen();
+   document.getElementById('videoViewer').requestFullscreen();
+   fullscreenButton.innerHTML=collapse;
+   fullScreenContent.innerHTML="Exit Full Screen";
+   isFullScreen=true;
   } else if (video.webkitRequestFullscreen) { /* Safari */
-    video.webkitRequestFullscreen();
+  document.getElementById('videoViewer').webkitRequestFullscreen();
+  fullscreenButton.innerHTML=collapse;
+  fullScreenContent.innerHTML="Exit Full Screen"
+  isFullScreen=true;
   } else if (video.msRequestFullscreen) { /* IE11 */
-    video.msRequestFullscreen();
+  document.getElementById('videoViewer').msRequestFullscreen();
+  fullscreenButton.innerHTML=collapse;
+  fullScreenContent.innerHTML="Exit Full Screen"
+  isFullScreen=true;
   }
   } else {
+    console.log(document.exitFullscreen)
     if (document.exitFullscreen) {
     document.exitFullscreen();
+    fullScreenContent.innerHTML="Full Screen";
+    fullscreenButton.innerHTML=expand;
+    isFullScreen=false;
   } else if (document.webkitExitFullscreen) { /* Safari */
     document.webkitExitFullscreen();
+    fullScreenContent.innerHTML="Full Screen";
+    fullscreenButton.innerHTML=expand;
+    isFullScreen=false;
   } else if (document.msExitFullscreen) { /* IE11 */
     document.msExitFullscreen();
+    fullScreenContent.innerHTML="Full Screen";
+    fullscreenButton.innerHTML=expand;
+    isFullScreen=false;
   }
   }
-});
+}

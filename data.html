@@ -62,37 +62,43 @@
   </script>
   <link href="./top/style/DataStyle.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/7f85a56ba4.css" />
-    
     <link
-    type="text/css"
-    rel="stylesheet"
-    href="./top/staticx/udemy/js/webpack/entry-main.50847fb7a8131faf922f.css"
+    nonce="qIVsTwBb+K5xe1r0c/7IYO6Vm+mPftB9IL/lOs3jwl4="
+    rel="preload"
+    as="script"
+    href="./top/staticx/udemy/js/webpack/course-taking-udlite-app.b40f2c07da824e2a62a1.js"
   />
   <link
-    type="text/css"
-    rel="stylesheet"
-    href="./top/staticx/udemy/js/webpack/common-app-css.04585221c27fc3c69dcd.css"
+    nonce="qIVsTwBb+K5xe1r0c/7IYO6Vm+mPftB9IL/lOs3jwl4="
+    rel="preload"
+    as="script"
+    href="./top/staticx/udemy/js/webpack/common-desktop-udlite-app.58bab36e13208581560f.js"
   />
-
-  <link
-      type="text/css"
-      rel="stylesheet"
-      href="./top/staticx/udemy/js/webpack/common-desktop-server-side.0d743704a0d033e5609f.css"
-    />
-
-    <link
-    type="text/css"
-    rel="stylesheet"
-    href="./top/staticx/udemy/js/webpack/course-taking-server-side.73c6ce6ce144734ed301.css"
-  />
-
   <link
   type="text/css"
   rel="stylesheet"
   href="./top/staticx/udemy/js/webpack/course-taking-udlite-app.7edf67db927629dc3813.css"
 />
-
-
+<link
+type="text/css"
+rel="stylesheet"
+href="./top/staticx/udemy/js/webpack/course-taking-server-side.73c6ce6ce144734ed301.css"
+/>
+<link
+type="text/css"
+rel="stylesheet"
+href="./top/staticx/udemy/js/webpack/common-desktop-server-side.0d743704a0d033e5609f.css"
+/>
+<link
+type="text/css"
+rel="stylesheet"
+href="./top/staticx/udemy/js/webpack/entry-main.50847fb7a8131faf922f.css"
+/>
+<link
+type="text/css"
+rel="stylesheet"
+href="./top/staticx/udemy/js/webpack/common-app-css.04585221c27fc3c69dcd.css"
+/> 
   </head>
   <body>
     <div class="mainContainer">
@@ -132,8 +138,8 @@
                                     data-purpose="curriculum-item-viewer-content">
                                     <section class="lectureView"
                                       aria-label="Udemy Video Gallery Clone">
-                                      <div class="videoViewer">
-                                        <div class="videoPlayer udlite-in-udheavy">
+                                      <div class="videoViewer" id="videoViewer">
+                                        <div class="videoPlayer liteInHeavy">
                                           <div class="videoWrapper" >
                                             <div class="videoCenter"
                                             ></div>
@@ -225,12 +231,20 @@
                                                       <div
                                                         id="popper-content--420"
                                                         class="popperContent videoTooltip"
+                                                        style="
+                                                        bottom: 100%;
+                                                        left: 50%;
+                                                        transform: translateX(
+                                                          -50%
+                                                        );
+                                                      "
                                                       >
                                                         <div
                                                           class="popperModuleAnimation"
                                                         >
                                                           <div
                                                             class="text-sm tooltip"
+                                                            id="playPause"
                                                           >
                                                             Play
                                                           </div>
@@ -244,7 +258,7 @@
                                                         type="button"
                                                         data-purpose="rewind-skip-button"
                                                         class="btn btn-small btn-ghost heading-sm controlBarDropdown controlBarDropdownDark controlBarDropdownSmall"
-                                                        id="popper-trigger--421"
+                                                        id="rewind"
                                                         tabindex="0"
                                                       >
                                                         <svg
@@ -262,12 +276,12 @@
                                                         id="popper-content--422"
                                                         class="popperContent videoTooltip"
                                                         style="
-                                                          bottom: 100%;
-                                                          left: 50%;
-                                                          transform: translateX(
-                                                            -50%
-                                                          );
-                                                        "
+                                                        bottom: 100%;
+                                                        left: 50%;
+                                                        transform: translateX(
+                                                          -50%
+                                                        );
+                                                      "
                                                       >
                                                         <div
                                                           class="popperModuleAnimation"
@@ -487,7 +501,7 @@
                                                         type="button"
                                                         data-purpose="forward-skip-button"
                                                         class="btn btn-small btn-ghost heading-sm controlBarDropdown controlBarDropdownDark controlBarDropdownSmall"
-                                                        id="popper-trigger--427"
+                                                        id="forward"
                                                         tabindex="0"
                                                       >
                                                         <svg
@@ -531,67 +545,21 @@
                                                       >
                                                         <span
                                                           data-purpose="current-time"
-                                                          >0:21</span
+                                                          id="currentTime"
+                                                          >
+                                                          0:0:0
+                                                          </span
                                                         ><span> / </span
                                                         ><span
                                                           data-purpose="duration"
-                                                          >5:23</span
+                                                          id="videoTime"
+                                                          >0:0:0</span
                                                         >
                                                       </div>
-                                                      <div
-                                                        aria-hidden="true"
-                                                        class="progress-display--progress-display-spacer--oww7U"
-                                                      >
-                                                        <span>4:44</span
-                                                        ><span> / </span
-                                                        ><span>4:44</span>
-                                                      </div>
+                                                     
                                                     </div>
                                                     <div
-                                                      class="popoverModule"
-                                                    >
-                                                      <button
-                                                        type="button"
-                                                        data-purpose="add-bookmark"
-                                                        class="btn btn-small btn-ghost heading-sm controlBarDropdown controlBarDropdownDark controlBarDropdownSmall"
-                                                        id="popper-trigger--429"
-                                                        tabindex="0"
-                                                      >
-                                                        <svg
-                                                          aria-label="Add note"
-                                                          role="img"
-                                                          focusable="false"
-                                                          class="icon icon-medium"
-                                                        >
-                                                          <use
-                                                            xlink:href="#icon-note-add"
-                                                          ></use>
-                                                        </svg>
-                                                      </button>
-                                                      <div
-                                                        id="popper-content--430"
-                                                        class="popperContent videoTooltip"
-                                                        style="
-                                                          bottom: 100%;
-                                                          left: 50%;
-                                                          transform: translateX(
-                                                            -50%
-                                                          );
-                                                        "
-                                                      >
-                                                        <div
-                                                          class="popperModuleAnimation"
-                                                        >
-                                                          <div
-                                                            class="text-sm tooltip"
-                                                          >
-                                                            Add note
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                    <div
-                                                      class="control-bar--spacer--32VvX"
+                                                      class="controlBarSpacer"
                                                     ></div>
                                                     <div>
                                                       <div
@@ -1077,8 +1045,9 @@
                                                       <button
                                                         type="button"
                                                         class="btn btn-small btn-ghost heading-sm controlBarDropdown controlBarDropdownDark controlBarDropdownSmall"
-                                                        id="popper-trigger--448"
+                                                        id="fullscreenButton"
                                                         tabindex="0"
+                                                        onclick="fullscreen()"
                                                       >
                                                         <svg
                                                           aria-label="Fullscreen"
@@ -1107,6 +1076,7 @@
                                                         >
                                                           <div
                                                             class="text-sm tooltip"
+                                                            id="fullScreenContent"
                                                           >
                                                             Fullscreen
                                                           </div>
@@ -1134,6 +1104,27 @@
                                                           ></use>
                                                         </svg>
                                                       </button>
+                                                      <div
+                                                      id="popper-content--449"
+                                                      class="popperContent videoTooltip"
+                                                      style="
+                                                        bottom: 100%;
+                                                        left: 0%;
+                                                        transform: translateX(
+                                                          -50%
+                                                        );
+                                                      "
+                                                    >
+                                                      <div
+                                                        class="popperModuleAnimation"
+                                                      >
+                                                        <div
+                                                          class="text-sm tooltip"
+                                                        >
+                                                         Expanded View
+                                                        </div>
+                                                      </div>
+                                                    </div>
                                                     </div>
                                                   </div>
                                                 </div>

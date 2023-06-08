@@ -765,16 +765,7 @@ body.ud-main-content-ready .ud-footer-initially-hidden {
 .smart-bar-module--basic-bar-content--2fGlA {
   text-align: left;
 }
-@media (min-width: 43.81em) {
-  .smart-bar-module--basic-bar-content--2fGlA,
-  .udlite-in-udheavy .smart-bar-module--basic-bar-content--2fGlA {
-    font-size: 1.6rem;
-  }
-  .smart-bar-module--smart-bar-timer--rERpC,
-  .udlite-in-udheavy .smart-bar-module--smart-bar-timer--rERpC {
-    font-size: 1.9rem;
-  }
-}
+
 @media (min-width: 61.31em) {
   .smart-bar-module--basic-bar-content--2fGlA {
     text-align: center;
