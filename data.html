@@ -22,9 +22,17 @@
       rel="preload"
       as="font"
       type="font/woff2"
-      href="./top/staticx/udemy/fonts/Udemy-Sans-Bold-v1.woff2"
+      href="./static/fonts/Udemy-Sans-Bold-v1.woff2"
       crossorigin="anonymous"
     />
+
+    <script onload>
+      document.addEventListener('DOMContentLoaded', function () {
+        const video = document.getElementById('video');
+        console.log(video)
+  document.getElementById('videoTime').innerHTML=secondsToHms(video.duration);
+}, true);
+    </script>
     
     <style type="text/css">
       @font-face {
@@ -33,7 +41,7 @@
         font-weight: 400; /* To match token @font-weight-normal */
         font-display: fallback;
         src: local("Udemy Sans Regular"), local("UdemySans-Regular"),
-          url("./top/staticx/udemy/fonts/Udemy-Sans-Regular-v1.woff2")
+          url("./static/fonts/Udemy-Sans-Regular-v1.woff2")
             format("woff2");
       }
 
@@ -43,7 +51,7 @@
         font-weight: 700; /* To match token @font-weight-bold */
         font-display: fallback;
         src: local("Udemy Sans Bold"), local("UdemySans-Bold"),
-          url("./top/staticx/udemy/fonts/Udemy-Sans-Bold-v1.woff2")
+          url("./static/fonts/Udemy-Sans-Bold-v1.woff2")
             format("woff2");
       }
 
@@ -53,45 +61,45 @@
         font-weight: 700; /* To match token @font-weight-bold */
         font-display: fallback;
         src: local("SuisseWorks Bold"), local("SuisseWorks-Bold"),
-          url("./top/staticx/udemy/fonts/SuisseWorks-Bold-v1.woff2")
+          url("./static/fonts/SuisseWorks-Bold-v1.woff2")
             format("woff2");
       }
     </style>
     <meta name="msapplication-TileColor" content="#a435f0" />
     <meta name="theme-color" content="#ffffff" />
-<script src="./top/JS/Data.js"  type="text/javascript" async="">
+<script src="./static/JS/Data.js"  type="text/javascript" async="">
   </script>
-  <link href="./top/style/DataStyle.css" rel="stylesheet" type="text/css"/>
-  <link href="./top/style/buttonStyle.css" rel="stylesheet" type="text/css"/>
-  <link href="./top/style/FontStyle.css" rel="stylesheet" type="text/css"/>
-  <link href="./top/style/courseContentStyle.css" rel="stylesheet" type="text/css"/>
-  <link href="./top/style/Overview.css" rel="stylesheet" type="text/css"/>
+  <link href="./static/style/DataStyle.css" rel="stylesheet" type="text/css"/>
+  <link href="./static/style/buttonStyle.css" rel="stylesheet" type="text/css"/>
+  <link href="./static/style/FontStyle.css" rel="stylesheet" type="text/css"/>
+  <link href="./static/style/courseContentStyle.css" rel="stylesheet" type="text/css"/>
+  <link href="./static/style/Overview.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/7f85a56ba4.css" />
-     <link
+     <!-- <link
     type="text/css"
     rel="stylesheet"
-    href="./top/staticx/udemy/js/webpack/style1.css"
+    href="./static/js/webpack/style1.css"
   />
   <link
   type="text/css"
   rel="stylesheet"
-  href="./top/staticx/udemy/js/webpack/style2.css"
+  href="./static/js/webpack/style2.css"
 />
 <link
 type="text/css"
 rel="stylesheet"
-href="./top/staticx/udemy/js/webpack/style3.css"
+href="./static/js/webpack/style3.css"
 />
 <link
 type="text/css"
 rel="stylesheet"
-href="./top/staticx/udemy/js/webpack/style4.css"
+href="./static/js/webpack/style4.css"
 />
 <link
 type="text/css"
 rel="stylesheet"
-href="./top/staticx/udemy/js/webpack/style5.css"
-/>
+href="./static/js/webpack/style5.css"
+/> -->
   </head>
   <body>
     <div class="mainContainer">
@@ -154,7 +162,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                 controlslist="nodownload"
                                                 tabindex="-1"
                                               >
-                                              <source src="./videos/video1.mp4" type="video/mp4">
+                                              <source src="./static/videos/video1.mp4" type="video/mp4">
                                             </video>
                                                <div 
                                                 class="controlBar"
@@ -179,7 +187,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                         data-purpose="video-sneak-peek-image"
                                                         alt="Lecture thumbnail"
                                                         class="sneakPeekImg"
-                                                        src="./top/staticx/udemy/images/Scenery.jpeg"
+                                                        src="./static/images/Scenery.jpeg"
                                                         loading="eager"
                                                        
                                                       />
@@ -1877,16 +1885,18 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                   class="carouselModuleScrollItems"
                                 >
                                   <div
-                                    class="ud-nav-button-container tabs-module--nav-button-container--u4wUp ud-nav-button-container-active tabs-module--active--2l5hb"
+                                    class="navButtonContainer tabModuleNavButtonContainer navButtonContainerActive tabModuleActive"
+                                    id="index1"
                                   >
                                     <h2>
                                       <button
                                         type="button"
-                                        id="tabs--1-tab-1"
+                                        id="tab1"
                                         aria-selected="true"
                                         role="tab"
-                                        class="btn btn-large btn-ghost heading-md ud-nav-button tabs-module--nav-button--3RilJ ud-nav-button-active tabs-module--active--2l5hb"
+                                        class="btn btn-large btn-ghost heading-md tabModuleNavButtons navButtonActive tabModuleActive"
                                         tabindex="0"
+                                        onclick="tabNav(1)"
                                       >
                                         <span>Overview</span>
                                       </button>
@@ -1898,16 +1908,18 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                   class="carouselModuleScrollItems"
                                 >
                                   <div
-                                    class="ud-nav-button-container tabs-module--nav-button-container--u4wUp"
+                                    class="navButtonContainer tabModuleNavButtonContainer"
+                                    id="index2"
                                   >
                                     <h2>
                                       <button
                                         type="button"
-                                        id="tabs--1-tab-2"
+                                        id="tab2"
                                         aria-selected="false"
                                         role="tab"
-                                        class="btn btn-large btn-ghost heading-md ud-nav-button tabs-module--nav-button--3RilJ"
+                                        class="btn btn-large btn-ghost heading-md  tabModuleNavButtons"
                                         tabindex="-1"
+                                        onclick="tabNav(2)"
                                       >
                                         <span
                                           ><span aria-hidden="true"
@@ -1925,16 +1937,18 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                   class="carouselModuleScrollItems"
                                 >
                                   <div
-                                    class="ud-nav-button-container tabs-module--nav-button-container--u4wUp"
+                                    class="navButtonContainer tabModuleNavButtonContainer"
+                                    id="index3"
                                   >
                                     <h2>
                                       <button
                                         type="button"
-                                        id="tabs--1-tab-3"
+                                        id="tab3"
                                         aria-selected="false"
                                         role="tab"
-                                        class="btn btn-large btn-ghost heading-md ud-nav-button tabs-module--nav-button--3RilJ"
+                                        class="btn btn-large btn-ghost heading-md  tabModuleNavButtons"
                                         tabindex="-1"
+                                        onclick="tabNav(3)"
                                       >
                                         <span>Notes</span>
                                       </button>
@@ -1946,16 +1960,18 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                   class="carouselModuleScrollItems"
                                 >
                                   <div
-                                    class="ud-nav-button-container tabs-module--nav-button-container--u4wUp"
+                                    class="navButtonContainer tabModuleNavButtonContainer"
+                                    id="index4"
                                   >
                                     <h2>
                                       <button
                                         type="button"
-                                        id="tabs--1-tab-4"
+                                        id="tab4"
                                         aria-selected="false"
                                         role="tab"
-                                        class="btn btn-large btn-ghost heading-md ud-nav-button tabs-module--nav-button--3RilJ"
+                                        class="btn btn-large btn-ghost heading-md  tabModuleNavButtons"
                                         tabindex="-1"
+                                        onclick="tabNav(4)"
                                       >
                                         <span>Reviews</span>
                                       </button>
@@ -1968,7 +1984,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                           <div
                             id="tabs--1-content-0"
                             role="tabpanel"
-                            class="ud-tab-content tabs-module--tab-content--30h0i"
+                            class="tabContent tabModuleTabContent"
                             tabindex="-1"
                             data-purpose="tab-container"
                             aria-labelledby="tabs--1-tab-0"
@@ -1976,12 +1992,12 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                           <div
                             id="tabs--1-content-1"
                             role="tabpanel"
-                            class="ud-tab-content tabs-module--tab-content--30h0i tabs-module--active--2l5hb"
+                            class="tabContent tabModuleTabContent tabModuleActive"
                             tabindex="0"
                             data-purpose="tab-container"
                             aria-labelledby="tabs--1-tab-1"
                           >
-                            <div class="show-more-module--container--2QPRN">
+                            <div class="showMoreModuleContainer">
                               <span
                                 id="show-more--453"
                                 data-type="checkbox"
@@ -1989,7 +2005,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                 style="display: none"
                               ></span>
                               <div
-                                class="show-more-module--content--cjTh0 show-more-module--with-gradient--1ZDrA"
+                                class="showMoreModuleContent showMoreModuleWithGradient"
                                 style="max-height: 65rem"
                               >
                                 <div tabindex="-1">
@@ -2002,7 +2018,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                           data-purpose="learning-reminder-banner"
                                         >
                                           <div
-                                            class="alert-banner-module--alert-banner--3V28L alert-banner-module--alert-banner-information--mrXyw"
+                                            class="alertBannerModule alertBannerModuleInfo"
                                           >
                                             <svg
                                               aria-hidden="true"
@@ -2015,16 +2031,16 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                             </svg>
                                             <div style="flex: 1 1 0%">
                                               <div
-                                                class="alert-banner-module--text-frame--2Ww0g alert-banner-module--text-frame-with-icon--bUiz7"
+                                                class="alertBannerModuleTextFrame alertBannerModuleTextFrameIcon"
                                               >
                                                 <span class="srOnly"
-                                                  >information alert</span
+                                                  >Information alert</span
                                                 >
                                                 <h2 class="heading-md">
                                                   Schedule learning time
                                                 </h2>
                                                 <div
-                                                  class="text-sm alert-banner-module--body--10wFa"
+                                                  class="text-sm alertBannerModuleBody"
                                                 >
                                                   Learning a little each day
                                                   adds up. Research shows that
@@ -2036,12 +2052,12 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                 </div>
                                               </div>
                                               <div
-                                                class="alert-banner-module--cta-container--dsp_p"
+                                                class="alertBannerModuleBodyContainer"
                                               >
                                                 <button
                                                   type="button"
                                                   data-purpose="action"
-                                                  class="btn btn-medium btn-primary heading-sm alert-banner-module--button--1YVkk"
+                                                  class="btn btn-medium btn-primary heading-sm alertBannerModuleButtons"
                                                 >
                                                   <span
                                                     >Get started</span
@@ -2049,7 +2065,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                 ><button
                                                   type="button"
                                                   data-purpose="dismiss"
-                                                  class="btn btn-medium btn-ghost heading-sm link-neutral alert-banner-module--button--1YVkk"
+                                                  class="btn btn-medium btn-ghost heading-sm link-neutral alertBannerModuleButtons"
                                                 >
                                                   <span>Dismiss</span>
                                                 </button>
@@ -2060,7 +2076,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                       </div>
                                     </div>
                                     <div
-                                      class="course-overview--heading--290FL"
+                                      class="courseOverviewHead"
                                       data-purpose="course-headline"
                                     >
                                       <h2 class="heading-xl">
@@ -2074,7 +2090,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                     </div>
                                     <dl>
                                       <div
-                                        class="course-overview--grid-row--1nKqQ"
+                                        class="courseOverviewGrid"
                                       >
                                         <dt>By the numbers</dt>
                                         <dd data-purpose="course-main-stats">
@@ -2091,12 +2107,12 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                         </dd>
                                       </div>
                                       <div
-                                        class="course-overview--grid-row--1nKqQ"
+                                        class="courseOverviewGrid"
                                         data-purpose="course-certificates"
                                       >
                                         <dt>Certificates</dt>
                                         <dd
-                                          class="course-overview--wide--37Lev"
+                                          class="courseOverviewWide"
                                         >
                                           <p>
                                             Get Udemy certificate by completing
@@ -2106,19 +2122,19 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                             aria-disabled="true"
                                             target="_blank"
                                             data-purpose="get-udemy-certificate"
-                                            class="btn btn-small btn-secondary heading-sm btn-disabled course-overview--certificate-button--1_cXw course-overview--text-gap-sm--2y1tD"
+                                            class="btn btn-small btn-secondary heading-sm btn-disabled courseOverviewCertificateButton courseOverviewTextGap"
                                             tabindex="-1"
                                             ><span>Udemy certificate</span></a
                                           >
                                         </dd>
                                       </div>
                                       <div
-                                        class="course-overview--grid-row--1nKqQ"
+                                        class="courseOverviewGrid"
                                         data-purpose="course-features"
                                       >
                                         <dt>Features</dt>
                                         <dd
-                                          class="course-overview--wide--37Lev"
+                                          class="courseOverviewWide"
                                         >
                                           <span
                                             >Available on
@@ -2141,15 +2157,15 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                         </dd>
                                       </div>
                                       <div
-                                        class="course-overview--grid-row--1nKqQ"
+                                        class="courseOverviewGrid"
                                       >
                                         <dt>Description</dt>
                                         <dd
-                                          class="course-overview--wide--37Lev"
+                                          class="courseOverviewWide"
                                           data-purpose="course-description"
                                         >
                                           <div
-                                            data-purpose="safely-set-inner-html:course-taking:course-description"
+                                            data-purpose="safelySetInnerHtmlCourseTaking:courseDescription"
                                           >
                                             <p>
                                               <strong
@@ -2222,65 +2238,6 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                               </li>
                                             </ul>
                                             <p>
-                                              <strong
-                                                >Who's teaching you in this
-                                                course?</strong
-                                              >
-                                            </p>
-                                            <p>
-                                              I am a Computer Science graduate
-                                              highly rated instructor with a
-                                              rating of 4.3 and more than 200k
-                                              students on Udemy, I have been
-                                              part of the corporate circle since
-                                              his college days. In his early
-                                              days, I was part of a startup team
-                                              delivering production grid android
-                                              apps. Currently, I am a lead
-                                              developer at EdYoda. I’m
-                                              responsible for the entire
-                                              front-end development &amp;
-                                              integration with the back-end.
-                                              React, Python, Django is my areas
-                                              of expertise. I have been
-                                              delivering corporate training for
-                                              Android, React, Javascript, Python
-                                              &amp; Django. I have eyes for
-                                              details &amp; that makes him
-                                              suited for delivering a finished
-                                              product. I’m a fitness freak &amp;
-                                              working out is his favorite thing
-                                              to do in his spare time.<br /><br />I
-                                              want everyone should enjoy
-                                              learning and I have shared my
-                                              knowledge that gonna be helpful
-                                              for React developers.<br /><br /><strong
-                                                >Why ReactJs?</strong
-                                              >
-                                            </p>
-                                            <p>
-                                              You know Companies
-                                              Worldwide<strong>
-                                                Require React JS
-                                                Developers.</strong
-                                              >
-                                            </p>
-                                            <p>
-                                              React.js is one of the most
-                                              demanding frameworks in the
-                                              market;31.3% of worldwide
-                                              specialists are currently
-                                              utilizing ReactJs. Some of the
-                                              world’s top tech teams use the
-                                              tool to design scalable,
-                                              easy-to-maintain solutions —
-                                              Netflix, PayPal, eBay, Airbnb, and
-                                              more. Why are businesses so
-                                              interested in React.js
-                                              implementation? Here are the
-                                              benefits of adopting the
-                                              framework:
-                                            </p>
                                             <ul>
                                               <li>
                                                 <p>
@@ -2380,90 +2337,23 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                               </strong>
                                             </p>
                                           </div>
-                                          <div
-                                            class="course-overview--course-description-sets--LhVPO"
-                                          >
-                                            <h4 class="heading-sm">
-                                              What you’ll learn
-                                            </h4>
-                                            <ul>
-                                              <li>
-                                                Learn to create basic web pages
-                                                using HTML5
-                                              </li>
-                                              <li>
-                                                Learn to style and add
-                                                animations to bring those basic
-                                                web pages to life using CSS3
-                                              </li>
-                                              <li>
-                                                Learn the Javascript language
-                                                from basic to advanced along
-                                                with the Next Gen JS - ES6
-                                              </li>
-                                              <li>
-                                                Learn to create responsive and
-                                                interactive web pages using
-                                                Javascript and jQuery
-                                              </li>
-                                              <li>
-                                                Create user-friendly, beautiful,
-                                                light and fast websites using
-                                                React JS
-                                              </li>
-                                              <li>
-                                                Become an expert front end
-                                                developer using ReactJs
-                                              </li>
-                                            </ul>
-                                            <h4 class="heading-sm">
-                                              Are there any course requirements
-                                              or prerequisites?
-                                            </h4>
-                                            <ul>
-                                              <li>
-                                                Should have basic knowledge of
-                                                operating Computer
-                                              </li>
-                                            </ul>
-                                            <h4 class="heading-sm">
-                                              Who this course is for:
-                                            </h4>
-                                            <ul>
-                                              <li>
-                                                Beginners who want to learn Web
-                                                Development from scratch
-                                              </li>
-                                              <li>
-                                                Freshers who want to become a
-                                                React Frontend Developer
-                                              </li>
-                                              <li>
-                                                Programmers who want to learn
-                                                Javascript language
-                                              </li>
-                                              <li>
-                                                Developers who want to learn
-                                                React JS
-                                              </li>
-                                            </ul>
-                                          </div>
+                                        
                                         </dd>
                                       </div>
                                       <div
-                                        class="course-overview--grid-row--1nKqQ"
+                                        class="courseOverviewGrid"
                                       >
                                         <dt>Instructor</dt>
                                         <dd
-                                          class="course-overview--wide--37Lev"
+                                          class="courseOverviewWide"
                                         >
                                           <div
-                                            class="instructor-profile--header-row--n0Prm"
+                                            class="instructorProfuleHeader"
                                           >
                                             <img
                                               src="https://img-c.udemycdn.com/user/200_H/98170214_2b30_2.jpg"
                                               alt=""
-                                              class="ud-avatar ud-avatar-image"
+                                              class="avatar avatarImage"
                                               width="64"
                                               height="64"
                                               loading="lazy"
@@ -2473,11 +2363,11 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                               "
                                             />
                                             <div
-                                              class="instructor-profile--title-wrapper--2V1u6"
+                                              class="instructorProfileTitle"
                                             >
                                               <a
-                                                class="heading-lg instructor-profile--title--1rlDt"
-                                                href="/user/edyoda2/"
+                                                class="heading-lg instructorProfileTitleName"
+                                                href="https://www.edyoda.com/"
                                                 data-purpose="instructor-url"
                                                 >EdYoda Digital University</a
                                               >
@@ -2485,11 +2375,11 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                             </div>
                                           </div>
                                           <div
-                                            class="instructor-profile--social-links-row--14uvr"
+                                            class="instructorProfileSocialLink"
                                           >
                                             <a
                                               href="https://twitter.com/edyodahq?lang=en"
-                                              class="instructor-profile--social-profile-btn--fs2ve"
+                                              class="instructorProfileSocialLinkBtn"
                                               target="_blank"
                                               rel="noopener noreferrer nofollow"
                                               ><svg
@@ -2503,7 +2393,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                 ></use></svg></a
                                             ><a
                                               href="https://www.facebook.com/edYoda.here/"
-                                              class="instructor-profile--social-profile-btn--fs2ve"
+                                              class="instructorProfileSocialLinkBtn"
                                               target="_blank"
                                               rel="noopener noreferrer nofollow"
                                               ><svg
@@ -2517,7 +2407,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                 ></use></svg></a
                                             ><a
                                               href="https://linkedin.com/company/edyoda/"
-                                              class="instructor-profile--social-profile-btn--fs2ve"
+                                              class="instructorProfileSocialLinkBtn"
                                               target="_blank"
                                               rel="noopener noreferrer nofollow"
                                               ><svg
@@ -2531,7 +2421,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                 ></use></svg></a
                                             ><a
                                               href="https://www.youtube.com/channel/UCs0XjxigSdATIXxMXHsjnXg"
-                                              class="instructor-profile--social-profile-btn--fs2ve"
+                                              class="instructorProfileSocialLinkBtn"
                                               target="_blank"
                                               rel="noopener noreferrer nofollow"
                                               ><svg
@@ -2545,7 +2435,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                 ></use></svg></a
                                             ><a
                                               href="https://www.edyoda.com"
-                                              class="instructor-profile--social-profile-btn--fs2ve"
+                                              class="instructorProfileSocialLinkBtn"
                                               target="_blank"
                                               rel="noopener noreferrer nofollow"
                                               ><svg
@@ -2559,7 +2449,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                 ></use></svg></a>
                                           </div>
                                           <div
-                                            class="instructor-profile--description--vCsKv"
+                                            class="instructorProfileDescriptions"
                                           >
                                             <div
                                               data-purpose="safely-set-inner-html:course-taking:instructor-description"
@@ -2590,198 +2480,36 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                             </div>
                                           </div>
                                         </dd>
-                                      </div>
-                                      <div
-                                        class="course-overview--grid-row--1nKqQ"
-                                      >
-                                        <dt>Instructor</dt>
-                                        <dd
-                                          class="course-overview--wide--37Lev"
-                                        >
-                                          <div
-                                            class="instructor-profile--header-row--n0Prm"
-                                          >
-                                            <img
-                                              src="https://img-c.udemycdn.com/user/200_H/47000136_b4e9_2.jpg"
-                                              alt=""
-                                              class="ud-avatar ud-avatar-image"
-                                              width="64"
-                                              height="64"
-                                              loading="lazy"
-                                              style="
-                                                width: 6.4rem;
-                                                height: 6.4rem;
-                                              "
-                                            />
-                                            <div
-                                              class="instructor-profile--title-wrapper--2V1u6"
-                                            >
-                                              <a
-                                                class="heading-lg instructor-profile--title--1rlDt"
-                                                href="/user/qaifi-khan/"
-                                                data-purpose="instructor-url"
-                                                >Qaifi Khan</a
-                                              >
-                                              <p>Learning Enabler</p>
-                                            </div>
-                                          </div>
-                                          <div
-                                            class="instructor-profile--social-links-row--14uvr"
-                                          >
-                                            <a
-                                              href="https://linkedin.com/in/qaifikhan"
-                                              class="instructor-profile--social-profile-btn--fs2ve"
-                                              target="_blank"
-                                              rel="noopener noreferrer nofollow"
-                                              ><svg
-                                                aria-label="LinkedIn"
-                                                role="img"
-                                                focusable="false"
-                                                class="icon icon-small"
-                                              >
-                                                <use
-                                                  xlink:href="#icon-linkedin"
-                                                ></use></svg></a
-                                            ><a
-                                              href="https://www.edyoda.com"
-                                              class="instructor-profile--social-profile-btn--fs2ve"
-                                              target="_blank"
-                                              rel="noopener noreferrer nofollow"
-                                              ><svg
-                                                aria-label="Personal website"
-                                                role="img"
-                                                focusable="false"
-                                                class="icon icon-small"
-                                              >
-                                                <use
-                                                  xlink:href="#icon-link"
-                                                ></use></svg></a>
-                                          </div>
-                                          <div
-                                            class="instructor-profile--description--vCsKv"
-                                          >
-                                            <div
-                                              data-purpose="safely-set-inner-html:course-taking:instructor-description"
-                                            >
-                                              <p>
-                                                Qaifi is a front-end developer,
-                                                product designer, and tech
-                                                evangelist. He has been coding
-                                                since he was 13 years old. He
-                                                has worked with numerous
-                                                technologies over the years.
-                                                Currently, he is working with
-                                                HTML, CSS, JavaScript, and
-                                                React. In the past, he has also
-                                                worked on Android with Java and
-                                                Python with Django.
-                                              </p>
-                                              <p>
-                                                He absolutely loves working on
-                                                the front-end stack and sharing
-                                                his knowledge with people
-                                                interested in front-end
-                                                development. He has more than
-                                                3000 hours of fresher training
-                                                experience. Currently, he is
-                                                working on a React book for job
-                                                seekers which will be out by the
-                                                end of Dec’22.
-                                              </p>
-                                            </div>
-                                          </div>
-                                        </dd>
-                                      </div>
-                                      <div
-                                        class="course-overview--grid-row--1nKqQ"
-                                      >
-                                        <dt>Instructor</dt>
-                                        <dd
-                                          class="course-overview--wide--37Lev"
-                                        >
-                                          <div
-                                            class="instructor-profile--header-row--n0Prm"
-                                          >
-                                            <img
-                                              src="https://img-c.udemycdn.com/user/200_H/56962440_e69e.jpg"
-                                              alt=""
-                                              class="ud-avatar ud-avatar-image"
-                                              width="64"
-                                              height="64"
-                                              loading="lazy"
-                                              style="
-                                                width: 6.4rem;
-                                                height: 6.4rem;
-                                              "
-                                            />
-                                            <div
-                                              class="instructor-profile--title-wrapper--2V1u6"
-                                            >
-                                              <a
-                                                class="heading-lg instructor-profile--title--1rlDt"
-                                                href="/user/mavludin/"
-                                                data-purpose="instructor-url"
-                                                >Mavludin Abdulkadirov</a
-                                              >
-                                              <p></p>
-                                            </div>
-                                          </div>
-                                          <div
-                                            class="instructor-profile--social-links-row--14uvr"
-                                          >
-                                            <a
-                                              href="https://www.edyoda.com/"
-                                              class="instructor-profile--social-profile-btn--fs2ve"
-                                              target="_blank"
-                                              rel="noopener noreferrer nofollow"
-                                              ><svg
-                                                aria-label="Personal website"
-                                                role="img"
-                                                focusable="false"
-                                                class="icon icon-small"
-                                              >
-                                                <use
-                                                  xlink:href="#icon-link"
-                                                ></use></svg></a>
-                                          </div>
-                                          <div
-                                            class="instructor-profile--description--vCsKv"
-                                          >
-                                            <div
-                                              data-purpose="safely-set-inner-html:course-taking:instructor-description"
-                                            ></div>
-                                          </div>
-                                        </dd>
-                                      </div>
+                                      </div>        
                                     </dl>
                                   </div>
                                 </div>
                               </div>
                               <button
                                 type="button"
-                                class="btn btn-medium btn-ghost heading-sm show-more-module--focusable-label--19jtd course-overview--show-more-btn--2jq19"
+                                class="btn btn-medium btn-ghost heading-sm showMoreModuleFocus courseOverviewShowMoreButton"
                                 aria-label="Show more"
                                 data-css-toggle-id="show-more--453"
                               >
                                 <span
                                   ><span
-                                    class="show-more-module--show-more--2bohq"
+                                    class="showMoreTitleText"
                                     >Show more</span
                                   ><span
-                                    class="show-more-module--show-less--1J4F5"
+                                    class="showLessTitleText"
                                     >Show less</span
                                   ></span
                                 ><svg
                                   aria-hidden="true"
                                   focusable="false"
-                                  class="icon icon-xsmall show-more-module--show-more--2bohq"
+                                  class="icon icon-xsmall showMoreTitleText"
                                 >
                                   <use xlink:href="#icon-expand"></use>
                                 </svg>
                                 <svg
                                   aria-hidden="true"
                                   focusable="false"
-                                  class="icon icon-xsmall show-more-module--show-less--1J4F5"
+                                  class="icon icon-xsmall showLessTitleText"
                                 >
                                   <use xlink:href="#icon-collapse"></use>
                                 </svg>
@@ -2791,23 +2519,23 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                           <div
                             id="tabs--1-content-2"
                             role="tabpanel"
-                            class="ud-tab-content tabs-module--tab-content--30h0i tabs-module--active--2l5hb"
+                            class="tabContent tabModuleTabContent"
                             tabindex="0"
                             data-purpose="tab-container"
                             aria-labelledby="tabs--1-tab-2"
                           >
-                            <div class="dashboard--sizing-wrapper--1vQud">
+                            <div class="dashboardSizingWrap">
                               <div>
                                 <div
-                                  class="ct-dashboard-search-bar ud-form-group"
+                                  class="dashboardSearchBar formGroup"
                                 >
                                   <label
-                                    class="srOnly ud-form-label heading-sm"
+                                    class="srOnly formLabel heading-sm"
                                     for="form-group--543"
                                     >Search all course questions</label
                                   >
                                   <form
-                                    class="text-input-form-module--text-input-form--9uxfY"
+                                    class="textInputFormModule"
                                   >
                                     <input
                                       aria-invalid="false"
@@ -2833,23 +2561,23 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                   </form>
                                 </div>
                                 <section
-                                  class="question-overview--sort-filter-container--1bD5k"
+                                  class="questionOverviewSortFilter"
                                   aria-label="Sort/filter options"
                                 >
-                                  <div class="ud-form-group">
+                                  <div class="formGroup">
                                     <label
                                       for="form-group--545"
-                                      class="ud-form-label heading-sm"
+                                      class="formLabel heading-sm"
                                       >Filters:</label
                                     >
                                     <div
-                                      class="ud-select-container ud-select-container-large"
+                                      class="selectContainer selectContainerLarge"
                                     >
                                       <select
                                         required=""
                                         aria-invalid="false"
                                         id="form-group--545"
-                                        class="ud-select text-md"
+                                        class="select text-md"
                                       >
                                         <option
                                           value="all_lectures"
@@ -2865,7 +2593,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                         </option>
                                       </select>
                                       <div
-                                        class="ud-select-icon-container ud-select-icon-right"
+                                        class="selectIconContainer selectIconRight"
                                       >
                                         <svg
                                           aria-hidden="true"
@@ -2877,20 +2605,20 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                       </div>
                                     </div>
                                   </div>
-                                  <div class="ud-form-group">
+                                  <div class="formGroup">
                                     <label
                                       for="form-group--547"
-                                      class="ud-form-label heading-sm"
+                                      class="formLabel heading-sm"
                                       >Sort by:</label
                                     >
                                     <div
-                                      class="ud-select-container ud-select-container-large"
+                                      class="selectContainer selectContainerLarge"
                                     >
                                       <select
                                         required=""
                                         aria-invalid="false"
                                         id="form-group--547"
-                                        class="ud-select text-md"
+                                        class="select text-md"
                                       >
                                         <option
                                           value="recency"
@@ -2912,7 +2640,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                         </option>
                                       </select>
                                       <div
-                                        class="ud-select-icon-container ud-select-icon-right"
+                                        class="selectIconContainer selectIconRight"
                                       >
                                         <svg
                                           aria-hidden="true"
@@ -2926,10 +2654,10 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                   </div>
                                 </section>
                                 <div
-                                  class="question-overview--question-list--1w_ss"
+                                  class="questionOverviewList"
                                 >
                                   <div
-                                    class="question-overview--filter-results-summary--2k-XZ"
+                                    class="questionOverviewFilterResults"
                                     role="status"
                                   >
                                     <h3 class="heading-lg">
@@ -2939,12 +2667,12 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                   <div>
                                     <div data-purpose="list">
                                       <div
-                                        class="question-list-question--question-wrapper--3qHzn"
+                                        class="questionListWrap"
                                       >
                                         <div>
                                           <div
                                             aria-label="Comment from Aravindh M"
-                                            class="ud-avatar heading-sm"
+                                            class="avatar heading-sm"
                                             data-purpose="display-initials"
                                             style="
                                               width: 3.2rem;
@@ -2955,23 +2683,23 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                           </div>
                                         </div>
                                         <div
-                                          class="question-list-question--info-container--YmB6x"
+                                          class="questionListInfoContainer"
                                         >
                                           <div
-                                            class="question-list-question--question-link-row--3lH3e"
+                                            class="questionListLinkRow"
                                           >
                                             <div
-                                              class="question-list-question--text-content--3FJpJ"
+                                              class="questionListTextContent"
                                             >
                                               <h4 tabindex="-1">
                                                 <a
                                                   data-purpose="question"
-                                                  class="heading-md link-neutral question-list-question--title-link--1TykF"
+                                                  class="heading-md link-neutral questionListTitleLink"
                                                   role="button"
-                                                  title="Can You tell me the difference between name and value input tag ?"
-                                                  href="/course/react-js-a-complete-guide-for-frontend-web-development/learn/#questions/9868900"
+                                                  title="Can You tell me the difference between name and value input tag?"
+                                                  href="https://stackoverflow.com/questions/56311592/exact-difference-between-name-and-value-attribute-in-input-tag"
                                                   ><span
-                                                    class="question-list-question--title--2Ctaz"
+                                                    class="questionListTitle"
                                                     >Can You tell me the
                                                     difference between name and
                                                     value input tag ?</span
@@ -2979,75 +2707,6 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                 >
                                               </h4>
                                             </div>
-                                            <div
-                                              class="question-list-question--upvote-response-num-container--2nz16"
-                                            >
-                                              <div>
-                                                <span class="srOnly"
-                                                  >108 upvotes</span
-                                                ><button
-                                                  type="button"
-                                                  class="btn btn-large btn-link heading-md num-upvotes--button--2_x0F"
-                                                >
-                                                  <span
-                                                    class="num-upvotes--num-upvotes--2GO-M"
-                                                    aria-hidden="true"
-                                                    >108</span
-                                                  ><svg
-                                                    aria-label="Upvote"
-                                                    role="img"
-                                                    focusable="false"
-                                                    class="icon icon-medium"
-                                                  >
-                                                    <use
-                                                      xlink:href="#icon-arrow-circle-up-outline"
-                                                    ></use>
-                                                  </svg>
-                                                </button>
-                                              </div>
-                                              <div
-                                                data-purpose="response-count"
-                                              >
-                                                <a
-                                                  data-purpose="question"
-                                                  class="btn btn-large btn-link heading-md question-list-question--comments-button--1lHVA"
-                                                  href="/course/react-js-a-complete-guide-for-frontend-web-development/learn/#questions/9868900"
-                                                  ><span
-                                                    class="question-list-question--num-answers--9dJfE"
-                                                    aria-hidden="true"
-                                                    >8</span
-                                                  ><svg
-                                                    aria-label="8 Answers"
-                                                    role="img"
-                                                    focusable="false"
-                                                    class="icon icon-medium"
-                                                  >
-                                                    <use
-                                                      xlink:href="#icon-question-answer"
-                                                    ></use></svg></a>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <div
-                                            class="text-xs text-with-links question-metadata--metadata--3Rmlb"
-                                          >
-                                            <a
-                                              href="/user/aravindh-m-6/"
-                                              target="_blank"
-                                              rel="noopener noreferrer"
-                                              data-purpose="user-tag"
-                                              >Aravindh</a
-                                            >
-                                            ·
-                                            <div
-                                              tabindex="0"
-                                              data-purpose="item-link"
-                                              class="item-link itemLink item-link--default-theme--YqsPR"
-                                              role="link"
-                                            >
-                                              Lecture 29
-                                            </div>
-                                            · 3 years ago
                                           </div>
                                         </div>
                                       </div>
@@ -3056,7 +2715,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                 </div>
                                 <button
                                   type="button"
-                                  class="btn btn-large btn-link heading-md link-neutral question-overview--ask-new-question--1ntQt"
+                                  class="btn btn-large btn-link heading-md link-neutral askNewQuestion"
                                   data-purpose="ask-new-question-button"
                                 >
                                   <span>Ask a new question</span>
@@ -3067,26 +2726,26 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                           <div
                             id="tabs--1-content-3"
                             role="tabpanel"
-                            class="ud-tab-content tabs-module--tab-content--30h0i tabs-module--active--2l5hb"
+                            class="tabContent tabModuleTabContent"
                             tabindex="0"
                             data-purpose="tab-container"
                             aria-labelledby="tabs--1-tab-3"
                           >
-                            <div class="dashboard--sizing-wrapper--1vQud">
+                            <div class="dashboardSizingWrap">
                               <div
-                                class="create-bookmark--create-bookmark-container--2XoIK"
+                                class="createBookmarkContainer"
                               >
                                 <button
                                   type="button"
-                                  class="btn btn-large btn-secondary text-md create-bookmark--create-bookmark-button--1o-Eb"
+                                  class="btn btn-large btn-secondary text-md createBookmarkButton"
                                   data-purpose="create-bookmark-button"
                                 >
                                   <span
-                                    class="create-bookmark--create-button-left--1fPc9"
+                                    class="createBookmarkButtonLeft"
                                     >Create a new note at
                                     <span
-                                      data-purpose="create-bookmark-current-time"
-                                      >0:21</span
+                                      data-purpose="createBookmarkCurrentTime"
+                                      ></span
                                     ></span
                                   ><svg
                                     aria-hidden="true"
@@ -3100,7 +2759,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                 </button>
                               </div>
                               <div
-                                class="bookmarks--sort-filter-container--3NWGk"
+                                class="bookmarkSortFilterContainer"
                               >
                                 <div class="popoverModule">
                                   <button
@@ -3129,7 +2788,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                       class="popperModuleAnimation"
                                     >
                                       <div
-                                        class="dropdown-module--menu--2O7pL dropdown-module--dropdown-menu--3HbSn"
+                                        class="dropdownModuleMenuData dropdownModuleMenuMetaData"
                                         style="max-height: 28rem"
                                       >
                                         <ul
@@ -3193,7 +2852,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                       class="popperModuleAnimation"
                                     >
                                       <div
-                                        class="dropdown-module--menu--2O7pL dropdown-module--dropdown-menu--3HbSn"
+                                        class="dropdownModuleMenuData dropdownModuleMenuMetaData"
                                         style="max-height: 28rem"
                                       >
                                         <ul
@@ -3232,7 +2891,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                 </div>
                               </div>
                               <div
-                                class="bookmarks--no-bookmarks-created--2Kh7w"
+                                class="noBookmarksCreated"
                               >
                                 Click the "Create a new note" box, the "+"
                                 button, or press "B" to make your first note.
@@ -3242,49 +2901,49 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                           <div
                             id="tabs--1-content-4"
                             role="tabpanel"
-                            class="ud-tab-content tabs-module--tab-content--30h0i tabs-module--active--2l5hb"
+                            class="tabContent tabModuleTabContent"
                             tabindex="0"
                             data-purpose="tab-container"
                             aria-labelledby="tabs--1-tab-5"
                           >
-                            <div class="dashboard--sizing-wrapper--1vQud">
+                            <div class="dashboardSizingWrap">
                               <div>
-                                <div class="component-margin">
+                                <div class="componentMargin">
                                   <span
                                     id="reviews"
-                                    class="in-page-offset-anchor"
+                                    class="inPageOffsetAnchor"
                                   ></span>
                                   <div
                                     data-purpose="course-reviews"
                                     data-client-side-render-only="CSR: component"
                                   >
                                     <h2
-                                      class="heading-xl reviews-section--title--3syaA"
+                                      class="heading-xl reviewSectionTitle"
                                     >
                                       Student feedback
                                     </h2>
                                     <div data-purpose="ratings-and-reviews">
                                       <div
-                                        class="reviews-section--stats-container--1s7am"
+                                        class="reviewSectionContainer"
                                       >
                                         <div data-purpose="ratings-and-reviews">
                                           <div
-                                            class="review-summary-widget--stats-container--j-BdX"
+                                            class="reviewSummaryWidget"
                                           >
                                             <div
-                                              class="text-md review-summary-widget--average-container--2Z2LJ"
+                                              class="text-md reviewSummaryWidgetAverage"
                                             >
                                               <div
                                                 data-purpose="average-rating"
-                                                class="heading-xxxl review-summary-widget--average-number--26or6"
+                                                class="heading-xxxl reviewSummaryWidgetAverageNumber"
                                               >
                                                 4.3
                                               </div>
                                               <div
-                                                class="review-summary-widget--average-stars--1SYQg"
+                                                class="reviewSummaryWidgetAverageNumberStars"
                                               >
                                                 <span
-                                                  class="star-rating-module--star-wrapper--VHfnS star-rating-module--large--22lCK"
+                                                  class="startRatingModule startRatingModuleLarge"
                                                   ><span class="srOnly"
                                                     >Rating: 4.3282623 out of
                                                     5</span
@@ -3309,7 +2968,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                       ></rect>
                                                     </mask>
                                                     <g
-                                                      class="star-rating-module--star-filled--3CnHc"
+                                                      class="startRatingModuleFilled"
                                                       mask="url(#star-rating-mask--562)"
                                                       data-purpose="star-filled"
                                                     >
@@ -3346,7 +3005,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                     </g>
                                                     <g
                                                       fill="transparent"
-                                                      class="star-rating-module--star-bordered--3WG_2"
+                                                      class="startRatingModuleBordered"
                                                       stroke-width="2"
                                                       data-purpose="star-bordered"
                                                     >
@@ -3388,30 +3047,30 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                     </g></svg></span>
                                               </div>
                                               <p
-                                                class="heading-lg review-summary-widget--average-rating-text--3qLe4"
+                                                class="heading-lg reviewSummaryWidgetAverageRateText"
                                               >
                                                 Course Rating
                                               </p>
                                             </div>
                                             <div
-                                              class="review-summary-widget--rates--2gRFH review-summary-widget--with-average-rating--1recA"
+                                              class="reviewSummaryWidgetRate reviewSummaryWidgetAverageRate"
                                             >
                                               <button
                                                 type="button"
                                                 data-purpose="rate-gauge-5"
                                                 aria-pressed="false"
-                                                class="btn btn-small btn-link heading-xs review-summary-widget--rates-row--3unBU"
+                                                class="btn btn-small btn-link heading-xs reviewSummaryWidgetRateRow"
                                               >
                                                 <span
-                                                  class="review-summary-widget--rate-gauge--2yKOU"
+                                                  class="reviewSummaryWidgetRateGauge"
                                                   ><span
-                                                    class="review-summary-widget--rate-gauge--bg--1x5Ut"
+                                                    class="reviewSummaryWidgetRateGaugebg"
                                                     ><span
-                                                      class="review-summary-widget--rate-gauge--fill--Brz9v"
+                                                      class="reviewSummaryWidgetRateGaugeFill"
                                                       style="width: 47%"
                                                     ></span></span></span
                                                 ><span
-                                                  class="star-rating-module--star-wrapper--VHfnS star-rating-module--large--22lCK"
+                                                  class="startRatingModule startRatingModuleLarge"
                                                   ><span class="srOnly"
                                                     >Rating: 5 out of 5</span
                                                   ><svg
@@ -3435,7 +3094,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                       ></rect>
                                                     </mask>
                                                     <g
-                                                      class="star-rating-module--star-filled--3CnHc"
+                                                      class="startRatingModuleFilled"
                                                       mask="url(#star-rating-mask--563)"
                                                       data-purpose="star-filled"
                                                     >
@@ -3472,7 +3131,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                     </g>
                                                     <g
                                                       fill="transparent"
-                                                      class="star-rating-module--star-bordered--3WG_2"
+                                                      class="startRatingModuleBordered"
                                                       stroke-width="2"
                                                       data-purpose="star-bordered"
                                                     >
@@ -3513,30 +3172,30 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                       ></use>
                                                     </g></svg></span
                                                 ><span
-                                                  class="text-sm review-summary-widget--rate-percent--1VwG5"
+                                                  class="text-sm reviewSummaryWidgetRatePercent"
                                                   ><span
                                                     data-purpose="percent-label"
                                                     >47%</span
                                                   ></span
                                                 ><span
-                                                  class="review-summary-widget--rate-clear--TRkv1"
+                                                  class="reviewSummaryWidgetRateClear"
                                                 ></span></button
                                               ><button
                                                 type="button"
                                                 data-purpose="rate-gauge-4"
                                                 aria-pressed="false"
-                                                class="btn btn-small btn-link heading-xs review-summary-widget--rates-row--3unBU"
+                                                class="btn btn-small btn-link heading-xs reviewSummaryWidgetRateRow"
                                               >
                                                 <span
-                                                  class="review-summary-widget--rate-gauge--2yKOU"
+                                                  class="reviewSummaryWidgetRateGauge"
                                                   ><span
-                                                    class="review-summary-widget--rate-gauge--bg--1x5Ut"
+                                                    class="reviewSummaryWidgetRateGaugebg"
                                                     ><span
-                                                      class="review-summary-widget--rate-gauge--fill--Brz9v"
+                                                      class="reviewSummaryWidgetRateGaugeFill"
                                                       style="width: 35%"
                                                     ></span></span></span
                                                 ><span
-                                                  class="star-rating-module--star-wrapper--VHfnS star-rating-module--large--22lCK"
+                                                  class="startRatingModule startRatingModuleLarge"
                                                   ><span class="srOnly"
                                                     >Rating: 4 out of 5</span
                                                   ><svg
@@ -3560,7 +3219,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                       ></rect>
                                                     </mask>
                                                     <g
-                                                      class="star-rating-module--star-filled--3CnHc"
+                                                      class="startRatingModuleFilled"
                                                       mask="url(#star-rating-mask--564)"
                                                       data-purpose="star-filled"
                                                     >
@@ -3597,7 +3256,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                     </g>
                                                     <g
                                                       fill="transparent"
-                                                      class="star-rating-module--star-bordered--3WG_2"
+                                                      class="startRatingModuleBordered"
                                                       stroke-width="2"
                                                       data-purpose="star-bordered"
                                                     >
@@ -3638,30 +3297,30 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                       ></use>
                                                     </g></svg></span
                                                 ><span
-                                                  class="text-sm review-summary-widget--rate-percent--1VwG5"
+                                                  class="text-sm reviewSummaryWidgetRatePercent"
                                                   ><span
                                                     data-purpose="percent-label"
                                                     >35%</span
                                                   ></span
                                                 ><span
-                                                  class="review-summary-widget--rate-clear--TRkv1"
+                                                  class="reviewSummaryWidgetRateClear"
                                                 ></span></button
                                               ><button
                                                 type="button"
                                                 data-purpose="rate-gauge-3"
                                                 aria-pressed="false"
-                                                class="btn btn-small btn-link heading-xs review-summary-widget--rates-row--3unBU"
+                                                class="btn btn-small btn-link heading-xs reviewSummaryWidgetRateRow"
                                               >
                                                 <span
-                                                  class="review-summary-widget--rate-gauge--2yKOU"
+                                                  class="reviewSummaryWidgetRateGauge"
                                                   ><span
-                                                    class="review-summary-widget--rate-gauge--bg--1x5Ut"
+                                                    class="reviewSummaryWidgetRateGaugebg"
                                                     ><span
-                                                      class="review-summary-widget--rate-gauge--fill--Brz9v"
+                                                      class="reviewSummaryWidgetRateGaugeFill"
                                                       style="width: 14%"
                                                     ></span></span></span
                                                 ><span
-                                                  class="star-rating-module--star-wrapper--VHfnS star-rating-module--large--22lCK"
+                                                  class="startRatingModule startRatingModuleLarge"
                                                   ><span class="srOnly"
                                                     >Rating: 3 out of 5</span
                                                   ><svg
@@ -3685,7 +3344,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                       ></rect>
                                                     </mask>
                                                     <g
-                                                      class="star-rating-module--star-filled--3CnHc"
+                                                      class="startRatingModuleFilled"
                                                       mask="url(#star-rating-mask--565)"
                                                       data-purpose="star-filled"
                                                     >
@@ -3722,7 +3381,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                     </g>
                                                     <g
                                                       fill="transparent"
-                                                      class="star-rating-module--star-bordered--3WG_2"
+                                                      class="startRatingModuleBordered"
                                                       stroke-width="2"
                                                       data-purpose="star-bordered"
                                                     >
@@ -3763,30 +3422,30 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                       ></use>
                                                     </g></svg></span
                                                 ><span
-                                                  class="text-sm review-summary-widget--rate-percent--1VwG5"
+                                                  class="text-sm reviewSummaryWidgetRatePercent"
                                                   ><span
                                                     data-purpose="percent-label"
                                                     >14%</span
                                                   ></span
                                                 ><span
-                                                  class="review-summary-widget--rate-clear--TRkv1"
+                                                  class="reviewSummaryWidgetRateClear"
                                                 ></span></button
                                               ><button
                                                 type="button"
                                                 data-purpose="rate-gauge-2"
                                                 aria-pressed="false"
-                                                class="btn btn-small btn-link heading-xs review-summary-widget--rates-row--3unBU"
+                                                class="btn btn-small btn-link heading-xs reviewSummaryWidgetRateRow"
                                               >
                                                 <span
-                                                  class="review-summary-widget--rate-gauge--2yKOU"
+                                                  class="reviewSummaryWidgetRateGauge"
                                                   ><span
-                                                    class="review-summary-widget--rate-gauge--bg--1x5Ut"
+                                                    class="reviewSummaryWidgetRateGaugebg"
                                                     ><span
-                                                      class="review-summary-widget--rate-gauge--fill--Brz9v"
+                                                      class="reviewSummaryWidgetRateGaugeFill"
                                                       style="width: 2%"
                                                     ></span></span></span
                                                 ><span
-                                                  class="star-rating-module--star-wrapper--VHfnS star-rating-module--large--22lCK"
+                                                  class="startRatingModule startRatingModuleLarge"
                                                   ><span class="srOnly"
                                                     >Rating: 2 out of 5</span
                                                   ><svg
@@ -3810,7 +3469,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                       ></rect>
                                                     </mask>
                                                     <g
-                                                      class="star-rating-module--star-filled--3CnHc"
+                                                      class="startRatingModuleFilled"
                                                       mask="url(#star-rating-mask--566)"
                                                       data-purpose="star-filled"
                                                     >
@@ -3847,7 +3506,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                     </g>
                                                     <g
                                                       fill="transparent"
-                                                      class="star-rating-module--star-bordered--3WG_2"
+                                                      class="startRatingModuleBordered"
                                                       stroke-width="2"
                                                       data-purpose="star-bordered"
                                                     >
@@ -3888,30 +3547,30 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                       ></use>
                                                     </g></svg></span
                                                 ><span
-                                                  class="text-sm review-summary-widget--rate-percent--1VwG5"
+                                                  class="text-sm reviewSummaryWidgetRatePercent"
                                                   ><span
                                                     data-purpose="percent-label"
                                                     >2%</span
                                                   ></span
                                                 ><span
-                                                  class="review-summary-widget--rate-clear--TRkv1"
+                                                  class="reviewSummaryWidgetRateClear"
                                                 ></span></button
                                               ><button
                                                 type="button"
                                                 data-purpose="rate-gauge-1"
                                                 aria-pressed="false"
-                                                class="btn btn-small btn-link heading-xs review-summary-widget--rates-row--3unBU"
+                                                class="btn btn-small btn-link heading-xs reviewSummaryWidgetRateRow"
                                               >
                                                 <span
-                                                  class="review-summary-widget--rate-gauge--2yKOU"
+                                                  class="reviewSummaryWidgetRateGauge"
                                                   ><span
-                                                    class="review-summary-widget--rate-gauge--bg--1x5Ut"
+                                                    class="reviewSummaryWidgetRateGaugebg"
                                                     ><span
-                                                      class="review-summary-widget--rate-gauge--fill--Brz9v"
+                                                      class="reviewSummaryWidgetRateGaugeFill"
                                                       style="width: 2%"
                                                     ></span></span></span
                                                 ><span
-                                                  class="star-rating-module--star-wrapper--VHfnS star-rating-module--large--22lCK"
+                                                  class="startRatingModule startRatingModuleLarge"
                                                   ><span class="srOnly"
                                                     >Rating: 1 out of 5</span
                                                   ><svg
@@ -3935,7 +3594,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                       ></rect>
                                                     </mask>
                                                     <g
-                                                      class="star-rating-module--star-filled--3CnHc"
+                                                      class="startRatingModuleFilled"
                                                       mask="url(#star-rating-mask--567)"
                                                       data-purpose="star-filled"
                                                     >
@@ -3972,7 +3631,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                     </g>
                                                     <g
                                                       fill="transparent"
-                                                      class="star-rating-module--star-bordered--3WG_2"
+                                                      class="startRatingModuleBordered"
                                                       stroke-width="2"
                                                       data-purpose="star-bordered"
                                                     >
@@ -4013,13 +3672,13 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                       ></use>
                                                     </g></svg></span
                                                 ><span
-                                                  class="text-sm review-summary-widget--rate-percent--1VwG5"
+                                                  class="text-sm reviewSummaryWidgetRatePercent"
                                                   ><span
                                                     data-purpose="percent-label"
                                                     >2%</span
                                                   ></span
                                                 ><span
-                                                  class="review-summary-widget--rate-clear--TRkv1"
+                                                  class="reviewSummaryWidgetRateClear"
                                                 ></span>
                                               </button>
                                             </div>
@@ -4027,23 +3686,23 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                         </div>
                                       </div>
                                       <div
-                                        class="reviews-section--sub-title--15odj"
+                                        class="reviewsSectionSubTitle"
                                       >
                                         <h2 class="heading-xl">Reviews</h2>
                                         <div
-                                          class="reviews-section--controls--2Fca5"
+                                          class="reviewSectionControls"
                                         >
                                           <div
-                                            class="reviews-section--search-filter--1NLHN"
+                                            class="reviewSectionSearchFilter"
                                           >
-                                            <div class="ud-form-group">
+                                            <div class="formGroup">
                                               <label
-                                                class="srOnly ud-form-label heading-sm"
+                                                class="srOnly formLabel heading-sm"
                                                 for="form-group--568"
                                                 >Search reviews</label
                                               >
                                               <form
-                                                class="text-input-form-module--text-input-form--9uxfY"
+                                                class="textInputFormModule"
                                               >
                                                 <input
                                                   aria-invalid="false"
@@ -4071,22 +3730,22 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                             </div>
                                           </div>
                                           <div
-                                            class="reviews-section--ratings-filter--1peVa"
+                                            class="reviewSectionRatingFilter"
                                           >
-                                            <div class="ud-form-group">
+                                            <div class="formGroup">
                                               <label
                                                 for="form-group--570"
-                                                class="ud-form-label heading-sm"
+                                                class="formLabel heading-sm"
                                                 >Filter ratings</label
                                               >
                                               <div
-                                                class="ud-select-container ud-select-container-large"
+                                                class="selectContainer selectContainerLarge"
                                               >
                                                 <select
                                                   required=""
                                                   aria-invalid="false"
                                                   id="form-group--570"
-                                                  class="ud-select text-md"
+                                                  class="select text-md"
                                                 >
                                                   <option value="">
                                                     All ratings
@@ -4108,7 +3767,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                   </option>
                                                 </select>
                                                 <div
-                                                  class="ud-select-icon-container ud-select-icon-right"
+                                                  class="selectIconContainer selectIconRight"
                                                 >
                                                   <svg
                                                     aria-hidden="true"
@@ -4132,19 +3791,19 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                             data-purpose="landing-page-review-list"
                                           >
                                             <div
-                                              class="reviews-section--review-container--3fUmR"
+                                              class="reviewSectionReviewContainer"
                                             >
                                               <div
-                                                class="individual-review--individual-review--3ChdH"
+                                                class="individualReview"
                                                 data-purpose="individual-review"
                                               >
                                                 <div
-                                                  class="individual-review--individual-review-author-avatar--3EOza"
+                                                  class="individualReviewAuthorAvatar"
                                                 >
                                                   <div
                                                     data-purpose="display-initials"
                                                     aria-hidden="true"
-                                                    class="ud-avatar heading-md"
+                                                    class="avatar heading-md"
                                                     style="
                                                       width: 4.8rem;
                                                       height: 4.8rem;
@@ -4154,23 +3813,23 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                   </div>
                                                 </div>
                                                 <div
-                                                  class="individual-review--individual-review-content--1EBWH"
+                                                  class="individualReviewContent"
                                                 >
                                                   <div
-                                                    class="individual-review--individual-review__name-container--2WQGl"
+                                                    class="individualReviewNameContainer"
                                                   >
                                                     <div
-                                                      class="heading-md individual-review--individual-review__name--3QBIE"
+                                                      class="heading-md individualReviewNames"
                                                       data-purpose="review-detail-user-name"
                                                     >
                                                       Harshit J.
                                                     </div>
                                                   </div>
                                                   <div
-                                                    class="individual-review--individual-review__detail--3Q03f"
+                                                    class="individualReviewDetail"
                                                   >
                                                     <span
-                                                      class="star-rating-module--star-wrapper--VHfnS star-rating-module--large--22lCK"
+                                                      class="startRatingModule startRatingModuleLarge"
                                                       ><span class="srOnly"
                                                         >Rating: 4.5 out of
                                                         5</span
@@ -4195,7 +3854,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                           ></rect>
                                                         </mask>
                                                         <g
-                                                          class="star-rating-module--star-filled--3CnHc"
+                                                          class="startRatingModuleFilled"
                                                           mask="url(#star-rating-mask--572)"
                                                           data-purpose="star-filled"
                                                         >
@@ -4232,7 +3891,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                         </g>
                                                         <g
                                                           fill="transparent"
-                                                          class="star-rating-module--star-bordered--3WG_2"
+                                                          class="startRatingModuleBordered"
                                                           stroke-width="2"
                                                           data-purpose="star-bordered"
                                                         >
@@ -4273,12 +3932,12 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                           ></use>
                                                         </g></svg></span
                                                     ><span
-                                                      class="text-sm individual-review--individual-review__detail-date--2wb4_"
+                                                      class="text-sm individualReviewDate"
                                                       >a month ago</span
                                                     >
                                                   </div>
                                                   <div
-                                                    class="show-more-module--container--2QPRN"
+                                                    class="showMoreModuleContainer"
                                                   >
                                                     <span
                                                       id="show-more--573"
@@ -4287,12 +3946,12 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                       style="display: none"
                                                     ></span>
                                                     <div
-                                                      class="show-more-module--content--cjTh0"
+                                                      class="showMoreModuleContent"
                                                       style="max-height: 10rem"
                                                     >
                                                       <div tabindex="-1">
                                                         <div
-                                                          class="text-sm individual-review--individual-review__comment--2sYGB"
+                                                          class="text-sm individualReviewComment"
                                                           data-purpose="review-comment-content"
                                                         >
                                                           <p>
@@ -4313,23 +3972,23 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                     </div>
                                                   </div>
                                                   <div
-                                                    class="individual-review--individual-review__feedback--IhWAA"
+                                                    class="individualReviewFeedback"
                                                   >
                                                     <div>
                                                       <p
-                                                        class="review-feedback--review-feedback__title--31vUK"
+                                                        class="individualReviewFeedbackTitle"
                                                         data-purpose="helpfulness-prompt"
                                                       >
                                                         Was this review helpful?
                                                       </p>
                                                       <div
-                                                        class="review-feedback--review-feedback__actions--3O8Kn"
+                                                        class="individualReviewFeedbackActions"
                                                       >
                                                         <button
                                                           type="button"
                                                           data-purpose="helpful-button-yes"
                                                           value="yes"
-                                                          class="btn btn-medium btn-secondary btn-round heading-sm btn-icon btn-icon-medium btn-icon-round review-feedback--review-feedback__actions-thumb_up--3xfws"
+                                                          class="btn btn-medium btn-secondary btn-round heading-sm btn-icon btn-icon-medium btn-icon-round individualReviewFeedbackUp"
                                                         >
                                                           <svg
                                                             aria-label="Mark as helpful"
@@ -4346,7 +4005,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                           type="button"
                                                           data-purpose="helpful-button-no"
                                                           value="no"
-                                                          class="btn btn-medium btn-secondary btn-round heading-sm btn-icon btn-icon-medium btn-icon-round review-feedback--review-feedback__actions-thumb_down--84plx"
+                                                          class="btn btn-medium btn-secondary btn-round heading-sm btn-icon btn-icon-medium btn-icon-round individualReviewFeedbackDown"
                                                         >
                                                           <svg
                                                             aria-label="Mark as unhelpful"
@@ -4361,7 +4020,7 @@ href="./top/staticx/udemy/js/webpack/style5.css"
                                                           </svg></button
                                                         ><button
                                                           type="button"
-                                                          class="btn btn-medium btn-ghost heading-sm text-sm review-feedback--review-report-abuse--UuO3r"
+                                                          class="btn btn-medium btn-ghost heading-sm text-sm individualReviewFeedbackAbuse"
                                                           data-purpose="report-abuse-link"
                                                         >
                                                           <span>Report</span>

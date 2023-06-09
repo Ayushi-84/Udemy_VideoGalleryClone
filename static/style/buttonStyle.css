@@ -224,8 +224,8 @@
     color: #000;
   }
   
-  .dropdown-module--menu--2O7pL .blockListItem:not(.btn-disabled):hover,
-  .dropdown-module--menu--2O7pL
+  .dropdownModuleMenuData .blockListItem:not(.btn-disabled):hover,
+  .dropdownModuleMenuData
     .blockListItem:not(.btn-disabled):hover
     .blockListItem-icon {
     color: #5624d0;

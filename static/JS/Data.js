@@ -1,7 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('videoTime').innerHTML=secondsToHms(video.duration);
-}, true);
-
 const play = ` <svg
 aria-label="Play"
 role="img"
@@ -276,7 +272,6 @@ function playBackRateChanger(item){
     if(i!=item)
     {
       const data=document.getElementById(`${i}`);
-      const checked=data.getAttribute("aria-checked");
         data.setAttribute("aria-checked", "false");  
     }
     i=i+0.25;
@@ -338,4 +333,37 @@ if(item==6)
 {
   video.src='./videos/video6.mp4'
 }
+}
+
+function tabNav(item){
+  var i;
+for(i=1;i<5;i++)
+{
+if(i!=item)
+{
+  var val=`tab${i}`;
+  var valId=`index${i}`;
+  var con=`tabs--1-content-${i}`;
+  var conData=document.getElementById(con);
+var d=document.getElementById(val);
+var dId=document.getElementById(valId);
+d.classList.remove('tabModuleActive');
+conData.classList.remove('tabModuleActive');
+dId.classList.remove('tabModuleActive');
+d.setAttribute("aria-selected", "false");  
+}
+}
+
+var value=`tab${item}`;
+  var valueId=`index${item}`;
+  var content=`tabs--1-content-${item}`
+  var contentData=document.getElementById(content);
+  console.log(contentData);
+var data=document.getElementById(value);
+var dataId=document.getElementById(valueId);
+data.classList.add('tabModuleActive');
+contentData.classList.add('tabModuleActive');
+dataId.classList.add('tabModuleActive');
+data.setAttribute("aria-selected", "true");  
+
 }
