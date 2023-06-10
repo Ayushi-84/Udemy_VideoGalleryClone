@@ -325,27 +325,43 @@ function expandedView(){
 function playVideo(item){
 if(item==1)
 {
-  video.src='./static/videos/video1.mp4'
+  video.src='./static/videos/video1.mp4';
+
 }
 if(item==2)
 {
   video.src='./static/videos/video2.mp4';
+ 
 }
 if(item==3)
 {
-  video.src='./static/videos/video3.mp4'
+  video.src='./static/videos/video3.mp4';
+
 }
 if(item==4)
 {
-  video.src='./static/videos/video4.mp4'
+  video.src='./static/videos/video4.mp4';
+ 
 }
 if(item==5)
 {
-  video.src='./static/videos/video5.mp4'
+  video.src='./static/videos/video5.mp4';
+
 }
 if(item==6)
 {
-  video.src='./static/videos/video6.mp4'
+  video.src='./static/videos/video6.mp4';
+}
+if (video.paused) {
+  video.play();
+  videoContainer.classList.add('playing');
+  playButton.innerHTML = pause;
+  playpause.innerHTML="Pause"
+} else {
+  video.pause();
+  videoContainer.classList.remove('playing');
+  playButton.innerHTML = play;
+  playpause.innerHTML="Play"
 }
 }
 
