@@ -1,11 +1,15 @@
-.no-sidebar .dashboardContent {
+.no-sidebar.dashboardContent {
     width: 83.33333333%;
   }
   @media (max-width: 75em) {
-    .no-sidebar .dashboardContent {
+    .no-sidebar.dashboardContent {
       width: 100%;
     }
   }
+
+.dataDisplay{
+  display: none;
+}
 
   .dashboardTabsContainer .tabsNav {
     padding: 0 1.6rem;

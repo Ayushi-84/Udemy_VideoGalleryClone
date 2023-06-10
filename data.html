@@ -25,15 +25,6 @@
       href="./static/fonts/Udemy-Sans-Bold-v1.woff2"
       crossorigin="anonymous"
     />
-
-    <script onload>
-      document.addEventListener('DOMContentLoaded', function () {
-        const video = document.getElementById('video');
-        console.log(video)
-  document.getElementById('videoTime').innerHTML=secondsToHms(video.duration);
-}, true);
-    </script>
-    
     <style type="text/css">
       @font-face {
         font-family: "Udemy Sans";
@@ -67,7 +58,7 @@
     </style>
     <meta name="msapplication-TileColor" content="#a435f0" />
     <meta name="theme-color" content="#ffffff" />
-<script src="./static/JS/Data.js"  type="text/javascript" async="">
+<script src="./static/JS/Data.js" type="text/javascript" async="">
   </script>
   <link href="./static/style/DataStyle.css" rel="stylesheet" type="text/css"/>
   <link href="./static/style/buttonStyle.css" rel="stylesheet" type="text/css"/>
@@ -75,31 +66,6 @@
   <link href="./static/style/courseContentStyle.css" rel="stylesheet" type="text/css"/>
   <link href="./static/style/Overview.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/7f85a56ba4.css" />
-     <!-- <link
-    type="text/css"
-    rel="stylesheet"
-    href="./static/js/webpack/style1.css"
-  />
-  <link
-  type="text/css"
-  rel="stylesheet"
-  href="./static/js/webpack/style2.css"
-/>
-<link
-type="text/css"
-rel="stylesheet"
-href="./static/js/webpack/style3.css"
-/>
-<link
-type="text/css"
-rel="stylesheet"
-href="./static/js/webpack/style4.css"
-/>
-<link
-type="text/css"
-rel="stylesheet"
-href="./static/js/webpack/style5.css"
-/> -->
   </head>
   <body>
     <div class="mainContainer">
@@ -894,7 +860,7 @@ href="./static/js/webpack/style5.css"
                   id="sidebarColumn"
                 >
                   <section
-                    class="sidebar--sidebar--2XpCD"
+                    class="sidebar1"
                     data-purpose="sidebar"
                     aria-label="Sidebar"
                   >
@@ -931,7 +897,7 @@ href="./static/js/webpack/style5.css"
                               id="accordion-panel--457"
                               data-type="checkbox"
                               data-checked="checked"
-                              style="display: none"
+                             
                             ></span>
                             <div
                               class="btn btn-large btn-link heading-md panelToggler panelModuleToggler panelModuleOuter"
@@ -1862,7 +1828,7 @@ href="./static/js/webpack/style5.css"
                 </div>
                 <div class="row1 dashboard">
                   <div class="rowContent">
-                    <div class="dashboardContent">
+                    <div class="dashboardContent" id="dashboardContent">
                       <section
                         class="dashboardTabsContainer"
                         aria-label="Additional course options"
@@ -1880,6 +1846,29 @@ href="./static/js/webpack/style5.css"
                                 id="scroll-port--2"
                                 aria-live="off"
                               >
+                              <div
+                                  data-index="1"
+                                  class="carouselModuleScrollItems"
+                                >
+                                  <div
+                                    class="navButtonContainer tabModuleNavButtonContainer dataDisplay"
+                                    id="index0"
+                                  >
+                                    <h2>
+                                      <button
+                                        type="button"
+                                        id="tab0"
+                                        aria-selected="false"
+                                        role="tab"
+                                        class="btn btn-large btn-ghost heading-md tabModuleNavButtons"
+                                        tabindex="0"
+                                        onclick="tabNav(0)"
+                                      >
+                                        <span>Course Content</span>
+                                      </button>
+                                    </h2>
+                                  </div>
+                                </div>
                                 <div
                                   data-index="1"
                                   class="carouselModuleScrollItems"
@@ -1895,7 +1884,7 @@ href="./static/js/webpack/style5.css"
                                         aria-selected="true"
                                         role="tab"
                                         class="btn btn-large btn-ghost heading-md tabModuleNavButtons navButtonActive tabModuleActive"
-                                        tabindex="0"
+                                        tabindex="-1"
                                         onclick="tabNav(1)"
                                       >
                                         <span>Overview</span>

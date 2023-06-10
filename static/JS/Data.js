@@ -1,3 +1,8 @@
+document.addEventListener('loadedmetadata', function () {
+  const video = document.getElementById('video');
+document.getElementById('videoTime').innerHTML=secondsToHms(video.duration);
+}, true);
+
 const play = ` <svg
 aria-label="Play"
 role="img"
@@ -86,7 +91,6 @@ class="icon icon-medium"
 const playButton = document.querySelector('#playButton');
 const playpause = document.getElementById('playPause');
 const fullScreenContent = document.getElementById('fullScreenContent');
-console.log(fullScreenContent)
 const rewind = document.querySelector('#rewind');
 const forward = document.querySelector('#forward');
 const video = document.getElementById('video');
@@ -291,15 +295,25 @@ function expandedView(){
   var exp=document.getElementById('ExpandedView')
   var item=document.getElementById('columnContainer')
   var expo=document.getElementById('expandedHorizontal')
+  var data=document.getElementById('index0');
+  var content=document.getElementById('sidebarContent').outerHTML;
+  var savContent=document.getElementById('tabs--1-content-0')
   if(item.classList.contains("no-sidebar"))
   {
     item.classList.remove("no-sidebar");
+    savContent.innerHTML='';
     document.getElementById('sidebarColumn').style.width="25%";
     exp.innerHTML='Expanded View';
     expo.innerHTML=expandedHor;
+    data.style.display='none';
+    savContent.innerHTML='';
+    tabNav(1);
   }
   else
   {
+    data.style.display='block';
+    savContent.innerHTML=content;
+    tabNav(0);
     item.classList.add('no-sidebar');
     document.getElementById('sidebarColumn').style.width="0%";
     exp.innerHTML='Collapse View';
@@ -311,59 +325,81 @@ function expandedView(){
 function playVideo(item){
 if(item==1)
 {
-  video.src='./videos/video1.mp4'
+  video.src='./static/videos/video1.mp4'
 }
 if(item==2)
 {
-  video.src='./videos/video2.mp4'
+  video.src='./static/videos/video2.mp4';
 }
 if(item==3)
 {
-  video.src='./videos/video3.mp4'
+  video.src='./static/videos/video3.mp4'
 }
 if(item==4)
 {
-  video.src='./videos/video4.mp4'
+  video.src='./static/videos/video4.mp4'
 }
 if(item==5)
 {
-  video.src='./videos/video5.mp4'
+  video.src='./static/videos/video5.mp4'
 }
 if(item==6)
 {
-  video.src='./videos/video6.mp4'
+  video.src='./static/videos/video6.mp4'
 }
 }
 
 function tabNav(item){
   var i;
-for(i=1;i<5;i++)
-{
-if(i!=item)
-{
-  var val=`tab${i}`;
-  var valId=`index${i}`;
-  var con=`tabs--1-content-${i}`;
-  var conData=document.getElementById(con);
-var d=document.getElementById(val);
-var dId=document.getElementById(valId);
-d.classList.remove('tabModuleActive');
-conData.classList.remove('tabModuleActive');
-dId.classList.remove('tabModuleActive');
-d.setAttribute("aria-selected", "false");  
-}
-}
+  var name=document.getElementById('columnContainer')
+  if(name.classList.contains("no-sidebar"))
+  { 
+    for(i=0;i<5;i++)
+    {
+    if(i!=item)
+    {
+      var val=`tab${i}`;
+      var valId=`index${i}`;
+      var con=`tabs--1-content-${i}`;
+      var conData=document.getElementById(con);
+    var d=document.getElementById(val);
+    var dId=document.getElementById(valId);
+    d.classList.remove('tabModuleActive');
+    conData.classList.remove('tabModuleActive');
+    dId.classList.remove('tabModuleActive');
+    d.setAttribute("aria-selected", "false");  
+    }
+    }
+  }
+  else
+  {
+    for(i=1;i<5;i++)
+    {
+    if(i!=item)
+    {
+      var val=`tab${i}`;
+      var valId=`index${i}`;
+      var con=`tabs--1-content-${i}`;
+      var conData=document.getElementById(con);
+    var d=document.getElementById(val);
+    var dId=document.getElementById(valId);
+    d.classList.remove('tabModuleActive');
+    conData.classList.remove('tabModuleActive');
+    dId.classList.remove('tabModuleActive');
+    d.setAttribute("aria-selected", "false");  
+    }
+    }
+  }
 
-var value=`tab${item}`;
+  var value=`tab${item}`;
   var valueId=`index${item}`;
   var content=`tabs--1-content-${item}`
   var contentData=document.getElementById(content);
-  console.log(contentData);
 var data=document.getElementById(value);
 var dataId=document.getElementById(valueId);
 data.classList.add('tabModuleActive');
 contentData.classList.add('tabModuleActive');
 dataId.classList.add('tabModuleActive');
-data.setAttribute("aria-selected", "true");  
+data.setAttribute("aria-selected", "true"); 
 
 }
