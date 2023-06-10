@@ -195,25 +195,30 @@ soundButton.addEventListener('click', function () {
   {
     popper.classList.remove("popper");
   }
+
+  var expo=document.getElementById('expandedHorizontal')
   if (!isFullScreen) {
     if (video.requestFullscreen) {
+      expo.style.display='none';
    document.getElementById('videoViewer').requestFullscreen();
    fullscreenButton.innerHTML=collapse;
    fullScreenContent.innerHTML="Exit Full Screen";
    isFullScreen=true;
   } else if (video.webkitRequestFullscreen) { /* Safari */
+  expo.style.display='none';
   document.getElementById('videoViewer').webkitRequestFullscreen();
   fullscreenButton.innerHTML=collapse;
   fullScreenContent.innerHTML="Exit Full Screen"
   isFullScreen=true;
   } else if (video.msRequestFullscreen) { /* IE11 */
+  expo.style.display='none';
   document.getElementById('videoViewer').msRequestFullscreen();
   fullscreenButton.innerHTML=collapse;
   fullScreenContent.innerHTML="Exit Full Screen"
   isFullScreen=true;
   }
   } else {
-    console.log(document.exitFullscreen)
+    expo.style.display='block';
     if (document.exitFullscreen) {
     document.exitFullscreen();
     fullScreenContent.innerHTML="Full Screen";
@@ -351,6 +356,10 @@ if(item==5)
 if(item==6)
 {
   video.src='./static/videos/video6.mp4';
+}
+if(item==7)
+{
+  video.src='./static/videos/video7.mp4';
 }
 if (video.paused) {
   video.play();
